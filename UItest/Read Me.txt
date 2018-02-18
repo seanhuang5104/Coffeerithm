@@ -1,0 +1,37 @@
+executable is in "UItest\Main\bin\x64\Release"
+the program will ask for .clp files (you can select multiple files at one shot)
+then ask for the folder that you store pictures
+***********************************************
+Rules for pictures!!
+take coffee_bean_facts.clp for example.
+(defrule acid_high
+	?n<-(answer_of "What is the acid intensity?" acid2 )
+	?p <- (nextQuestion(question "What is the acid intensity?" ))
+             ?k <- (profile(name user))
+  	=>
+	(modify ?p(question "What is your favorite flavor?")(options Fruity Nutty Sweetness Special))
+	(modify ?k(acidity 2))
+	(retract ?n)
+)
+
+you can see if the criterias fits(means previous question has been answered.)
+the rule should retract the answer for last question,then modify the fact "nextQuestion" fill it with question and options
+
+!!!!!!!IMPORTANT!!!!!!!
+the picture name should be the same as you put in the options.
+for above example, options are Fruity Nutty Sweetness Special,so there shoud have 
+pictures named Fruit.jpg Nutty.jpg Sweetness.jpg Special.jpg in the folder 
+and another set of pictures CFruit.jpg CNutty.jpg CSweetness.jpg CSpecial.jpg for blur version of that option.
+
+To end the program:
+last rule should be something like this
+
+(defrule bean_recommand 
+	?p <- (nextQuestion(question "findBeansNow"))
+  	=>
+	(modify ?p(question "finished"))
+)
+
+When C# find the next question string is "finished"
+it will end the loop and show all options for the last question.
+(so you shoud pass question string "finished" and recommanded result as option for showing)
