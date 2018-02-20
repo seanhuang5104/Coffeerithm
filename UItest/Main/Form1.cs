@@ -40,7 +40,7 @@ namespace Main
             {
                 clips.Load(clpFiles[0].ToString());
             }
-
+            clips.Reset();
             //Get directory for pictures
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.SelectedPath = System.IO.Path.Combine(Application.StartupPath);
@@ -96,7 +96,7 @@ namespace Main
         /// </summary>
         private void ProcessRules()
         {
-            clips.Reset();
+            //clips.Reset();
             foreach (String factString in factsAssert)
             {
                 String assertCommand = "(assert (answer_of " + factString + "))";
