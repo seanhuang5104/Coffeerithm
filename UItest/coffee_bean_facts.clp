@@ -4,9 +4,10 @@
 
 (deftemplate profile
   (slot name (default any))
-     (slot acidity (default 0))
-     (slot sweetness (default 0))
+     (slot acidity (default any))
+     (slot sweetness (default any))
      (slot aroma)
+     (slot bean_recommanded)
   (multislot fav-blends (default any))
   (multislot fav-beans (default any)))
 
@@ -17,7 +18,7 @@
  
 (deffacts profile-db
 	(profile (name user))
-	(nextQuestion (question "What is the acid intensity?" ) (options 0 1))
+	(nextQuestion (question "What is the acid intensity?" ) (options acid0 acid1 acid2))
 )
 
 ;;********************************
@@ -43,7 +44,7 @@
 
 ;Sweetness*
 (bean (name "Malawi, Light Medium Roasted, Taste like Lemon & Honey, Full Body") (acidity 2) (aroma honey))
-(bean (name "Colombia, Medium Roasted, Taste like Caramel & Toasted Nuts, Very Full Body") (acidity 1) (aroma nutty))
+(bean (name "Colombia, Medium Roasted, Taste like Caramel & Toasted Nuts, Very Full Body") (acidity 1) (aroma Nutty))
 (bean (name "Peru, Medium Dark Roasted, Taste like Rich Caramel, Very Thin Body") (acidity 0) (aroma caramel))
 
 ;Special*
@@ -56,7 +57,7 @@
 ;;* RULES                                    *
 ;;********************************************
 ;;********************************************
-;;* BEAN_select_acidity_rules                *
+;;* BEAN_select_aroma_rules                  *
 ;;********************************************
 
 (defrule acid_low
@@ -64,7 +65,7 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What is your favorite flavor?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options Aapple Ahazelnut Arich_caramal Apleasant_cocoa))
 	(modify ?k(acidity 0))
 	(retract ?n)
 )
@@ -74,7 +75,7 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What is your favorite flavor?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options Aplum Asmooth_nutty Alemon Aspicy))
 	(modify ?k(acidity 1))
 	(retract ?n)
 )
@@ -84,62 +85,78 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What is your favorite flavor?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options Aberries Achocolate Ahoney Aspicy))
 	(modify ?k(acidity 2))
 	(retract ?n)
 )
 
+;;************************************************
+;;* transform aroma selected into catagory name  *
+;;************************************************
+(defrule consolidate_aroma_fruity
+	?n<-(answer_of "What aroma would you like?" ?)
+	(or (answer_of "What aroma would you like?" Aapple)
+	(answer_of "What aroma would you like?" Aplum)
+	(answer_of "What aroma would you like?" Aberries))
+	=>
+	(retract ?n)
+	(assert (answer_of "What aroma would you like?" Fruity))	
+)
+
+(defrule consolidate_aroma_nutty
+	?n<-(answer_of "What aroma would you like?" ?)
+	(or (answer_of "What aroma would you like?" Ahazelnut)
+	(answer_of "What aroma would you like?" Asmooth_nutty)
+	(answer_of "What aroma would you like?" Achocolate))
+	=>
+	(retract ?n)
+	(assert (answer_of "What aroma would you like?" Nutty))	
+)
+
+(defrule consolidate_aroma_sweetness
+	?n<-(answer_of "What aroma would you like?" ?)
+	(or (answer_of "What aroma would you like?" Arich_caramal)
+	(answer_of "What aroma would you like?" Alemon)
+	(answer_of "What aroma would you like?" Ahoney))
+	=>
+	(retract ?n)
+	(assert (answer_of "What aroma would you like?" Sweetness))	
+)
+
+(defrule consolidate_aroma_special
+	?n<-(answer_of "What aroma would you like?" ?)
+	(or (answer_of "What aroma would you like?" Apleasant_cocoa)
+	(answer_of "What aroma would you like?" Aspicy))
+	=>
+	(retract ?n)
+	(assert (answer_of "What aroma would you like?" Special))	
+)
 
 ;;********************************************
-;;* BEAN_select_flavor_rules                 *
+;;* modify user profile                      *
 ;;********************************************
-
-(defrule flavor_Fruity 
-	?n<-(answer_of "What is your favorite flavor?" Fruity)
-	?p <- (nextQuestion(question "What is your favorite flavor?"))
-             ?k <- (profile(name user))
-  	=>
-	(modify ?p(question "findBeansNow"))
-      (modify ?k(aroma Fruity))
+(defrule profile_update
+	?k <- (profile(name user))
+	?n <- (answer_of "What aroma would you like?" ?aroma)
+	(or (answer_of "What aroma would you like?" Fruity)
+	(answer_of "What aroma would you like?" Nutty)
+	(answer_of "What aroma would you like?" Special)
+	(answer_of "What aroma would you like?" Sweetness))
+	=>
+	(modify ?k(aroma ?aroma))
+	(printout t ?aroma crlf)
 	(retract ?n)
 )
-
-(defrule flavor_Nutty 
-	?n<-(answer_of "What is your favorite flavor?" Nutty)
-	?p <- (nextQuestion(question "What is your favorite flavor?"))
-             ?k <- (profile(name user))
-  	=>
-	(modify ?p(question "findBeansNow"))
-      (modify ?k(aroma Nutty))
-	(retract ?n)
-)
-
-(defrule flavor_Sweetness 
-	?n<-(answer_of "What is your favorite flavor?" Sweetness)
-	?p <- (nextQuestion(question "What is your favorite flavor?"))
-             ?k <- (profile(name user))
-  	=>
-	(modify ?p(question "findBeansNow"))
-      (modify ?k(aroma Sweetness))
-	(retract ?n)
-)
-
-(defrule flavor_Special 
-	?n<-(answer_of "What is your favorite flavor?" Special)
-	?p <- (nextQuestion(question "What is your favorite flavor?"))
-             ?k <- (profile(name user))
-  	=>
-	(modify ?p(question "findBeansNow"))
-      (modify ?k(aroma Special))
-	(retract ?n)
-)
+;(load "C:\\Users\\sean_\\VSprojects\\UItest\\coffee_bean_facts.clp")
 
 ;;********************************************
 ;;* BEAN_recommandation_rules                *
 ;;********************************************
 (defrule bean_recommand 
-	?p <- (nextQuestion(question "findBeansNow"))
+	?n<-(profile(name user)(aroma ?aroma)(acidity ?acidity))	
+	?k<-(bean(name ?name)(aroma ?aroma)(acidity ?acidity))
   	=>
-	(modify ?p(question "finished"))
+	(modify ?n(bean_recommanded ?name))
+	(retract ?k)
 )
 
