@@ -83,7 +83,7 @@
 ;Medium Acidity, Medium Bitterness
 (bean (name "Hawaii Kona, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "winey"))
 (bean (name "Blue Mountain Jamaica, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "mellow"))
-(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "Jasmine"))
+(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "jasmine"))
 ;Low Acidity, High Bitterness
 (bean (name "Yemen, Medium High Roasted, Full Body") (acidity 0) (category special) (aroma "winey"))
 (bean (name "Java, High Full Roasted, Thin Body") (acidity 0) (category special) (aroma "woody"))
@@ -123,7 +123,7 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What aroma would you like?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
 	(modify ?k(acidity 2))
 	(retract ?n)
 )
@@ -134,8 +134,9 @@
 
 ;This part can expend!! after select Fruity aroma ,there should be multiple selection waiting.
 
+;low acidity*
 (defrule specific_lowacid_aroma_fruity
-	?n<-(answer_of "What aroma would you like?" Fruity )
+	?n<-(answer_of "What aroma would you like?" fruity )
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
@@ -144,32 +145,105 @@
 )
 
 (defrule specific_lowacid_aroma_nutty
-	?n<-(answer_of "What aroma would you like?" Nutty )
+	?n<-(answer_of "What aroma would you like?" nutty )
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options chocolate spices smoky))
+	(modify ?p(question "Let us get more specific?")(options "chocolate" "dark chocolate" "double chocolate"))
 	(retract ?n)
 )
 
 (defrule specific_lowacid_aroma_sweetness
-	?n<-(answer_of "What aroma would you like?" Sweetness )
+	?n<-(answer_of "What aroma would you like?" sweetness )
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options honey nutty caramel))
+	(modify ?p(question "Let us get more specific?")(options "buttery" "vanilla" "cola"))
 	(retract ?n)
 )
 
 (defrule specific_lowacid_aroma_special
-	?n<-(answer_of "What aroma would you like?" Special )
+	?n<-(answer_of "What aroma would you like?" special )
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options blueberry honey chocolate))
+	(modify ?p(question "Let us get more specific?")(options "smoky" "brown roast" "rubbery"))
 	(retract ?n)
 )
 
+;med acidity*
+(defrule specific_medacid_aroma_fruity
+	?n<-(answer_of "What aroma would you like?" fruity )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 1))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "raisin" "prune" "cherry"))
+	(retract ?n)
+)
+
+(defrule specific_medacid_aroma_nutty
+	?n<-(answer_of "What aroma would you like?" nutty )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 1))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "blackforest" "smooth nutty" "velvety"))
+	(retract ?n)
+)
+
+(defrule specific_medacid_aroma_sweetness
+	?n<-(answer_of "What aroma would you like?" sweetness )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 1))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "orange" "lemon" "lime"))
+	(retract ?n)
+)
+
+(defrule specific_medacid_aroma_special
+	?n<-(answer_of "What aroma would you like?" special )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 1))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "winey" "mellow" "jasmine"))
+	(retract ?n)
+)
+
+;high acidity*
+(defrule specific_highacid_aroma_fruity
+	?n<-(answer_of "What aroma would you like?" fruity )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 2))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "tangerine" "peach" "black cherry"))
+	(retract ?n)
+)
+
+(defrule specific_highacid_aroma_nutty
+	?n<-(answer_of "What aroma would you like?" nutty )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 2))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "almond" "hazelnut" "walnut"))
+	(retract ?n)
+)
+
+(defrule specific_highacid_aroma_sweetness
+	?n<-(answer_of "What aroma would you like?" sweetness )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 2))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "honey" "caramel" "maple syrup"))
+	(retract ?n)
+)
+
+(defrule specific_highacid_aroma_special
+	?n<-(answer_of "What aroma would you like?" special )
+	?p <- (nextQuestion(question "What aroma would you like?" ))
+	(profile(name user)(acidity 2))
+  	=>
+	(modify ?p(question "Let us get more specific?")(options "winey" "woody" "earthy"))
+	(retract ?n)
+)
 
 ;;********************************************
 ;;* modify user profile                      *
@@ -181,6 +255,7 @@
 	(modify ?k(aroma ?aroma))
 	(retract ?n)
 )
+
 ;(load "C:\\Users\\sean_\\VSprojects\\UItest\\coffee_bean_facts.clp")
 
 ;;********************************************
