@@ -28,7 +28,7 @@
 (deftemplate bean
   (slot name (default ?NONE))
   (slot acidity (default any))
-  (multislot category (default any)
+  (multislot category (default any))
   (multislot aroma (default any)))
 
 (deffacts the-coffee-bean-list 
@@ -103,7 +103,7 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What aroma would you like?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
 	(modify ?k(acidity 0))
 	(retract ?n)
 )
@@ -113,7 +113,7 @@
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What aroma would you like?")(options Fruity Nutty Sweetness Special))
+	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
 	(modify ?k(acidity 1))
 	(retract ?n)
 )
