@@ -35,59 +35,59 @@
 
 ;Fruits*
 ;High Acidity, Low Bitterness
-(bean (name "Ethiopia Sidamo, Medium Roasted, Very Full Body") (acidity 2) (category fruity) (aroma "blueberry"))
-(bean (name "Rwanda, Medium Roasted, Very Full Body") (acidity 2) (category fruity) (aroma "strawberry"))
-(bean (name "Kenya, Light Roasted, Full Body") (acidity 2) (category fruity) (aroma "blackberry"))
+(bean (name "Ethiopia Sidamo, Medium Roasted, Very Full Body") (acidity 2) (category fruity) (aroma blueberry))
+(bean (name "Rwanda, Medium Roasted, Very Full Body") (acidity 2) (category fruity) (aroma strawberry))
+(bean (name "Kenya, Light Roasted, Full Body") (acidity 2) (category fruity) (aroma blackberry))
 ;Medium Acidity, Medium Bitterness
-(bean (name "Honduras, Medium Roasted, Very Full Body") (acidity 1) (category fruity) (aroma "raisin"))
-(bean (name "Rwanda, Medium Roasted, Very Full Body") (acidity 1) (category fruity) (aroma "prune"))
-(bean (name "Burundi, Light Medium Roasted, Thin to Full Body") (acidity 1) (category fruity) (aroma "cherry"))
+(bean (name "Honduras, Medium Roasted, Very Full Body") (acidity 1) (category fruity) (aroma raisin))
+(bean (name "Rwanda, Medium Roasted, Very Full Body") (acidity 1) (category fruity) (aroma prune))
+(bean (name "Burundi, Light Medium Roasted, Thin to Full Body") (acidity 1) (category fruity) (aroma cherry))
 ;Low Acidity, High Bitterness
-(bean (name "Nicaragua, Medium High Roasted, Full Body") (acidity 0) (category fruity) (aroma "tangerine"))
-(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma "peach"))
-(bean (name "Mexico, Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma "black cherry"))
+(bean (name "Nicaragua, Medium High Roasted, Full Body") (acidity 0) (category fruity) (aroma tangerine))
+(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma peach))
+(bean (name "Mexico, Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma black_cherry))
 
 ;Nutty*
 ;High Acidity, Low Bitterness
-(bean (name "Brazil, Light Roasted, Thin Body") (acidity 2) (category nutty) (aroma "chocolate"))
-(bean (name "Sumatra, Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma "dark chocolate"))
-(bean (name "Tanzania, Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma "double chocolate"))
+(bean (name "Brazil, Light Roasted, Thin Body") (acidity 2) (category nutty) (aroma chocolate))
+(bean (name "Sumatra, Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma dark_chocolate))
+(bean (name "Tanzania, Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma double_chocolate))
 ;Medium Acidity, Medium Bitterness
-(bean (name "Congo, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma "blackforest"))
-(bean (name "Mexico, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma "smooth nutty"))
-(bean (name "Guatemala, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma "velvety"))
+(bean (name "Congo, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma blackforest))
+(bean (name "Mexico, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smooth_nutty))
+(bean (name "Guatemala, Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma velvety))
 ;Low Acidity, High Bitterness
-(bean (name "Sulawesi, Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma "almond"))
-(bean (name "Honduras, Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma "hazelnut"))
-(bean (name "Brazil, Light Roasted, Thin Body") (acidity 0) (category nutty) (aroma "walnut"))
+(bean (name "Sulawesi, Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma almond))
+(bean (name "Honduras, Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma hazelnut))
+(bean (name "Brazil, Light Roasted, Thin Body") (acidity 0) (category nutty) (aroma walnut))
 
 ;Sweetness*
 ;High Acidity, Low Bitterness
-(bean (name "Guatemala, Medium Roasted, Very Full Body") (acidity 2) (category sweetness) (aroma "buttery"))
-(bean (name "Malawi, Light Medium Roasted, Full Body") (acidity 2) (category sweetness) (aroma "vanilla"))
-(bean (name "Burundi, Light Medium Roasted, Thin to Full Body") (acidity 2) (category sweetness) (aroma "cola"))
+(bean (name "Guatemala, Medium Roasted, Very Full Body") (acidity 2) (category sweetness) (aroma buttery))
+(bean (name "Malawi, Light Medium Roasted, Full Body") (acidity 2) (category sweetness) (aroma vanilla))
+(bean (name "Burundi, Light Medium Roasted, Thin to Full Body") (acidity 2) (category sweetness) (aroma cola))
 ;Medium Acidity, Medium Bitterness
-(bean (name "Colombia, Medium Roasted, Very Full Body") (acidity 1) (category sweetness) (aroma "orange"))
-(bean (name "Tanzania, Medium Roasted, Very Full Body") (acidity 1) (category sweetness) (aroma "lemon"))
-(bean (name "Nicaragua, Medium High Roasted, Full Body") (acidity 1) (category sweetness) (aroma "lime"))
+(bean (name "Colombia, Medium Roasted, Very Full Body") (acidity 1) (category sweetness) (aroma orange))
+(bean (name "Tanzania, Medium Roasted, Very Full Body") (acidity 1) (category sweetness) (aroma lemon))
+(bean (name "Nicaragua, Medium High Roasted, Full Body") (acidity 1) (category sweetness) (aroma lime))
 ;Low Acidity, High Bitterness
-(bean (name "Panama, Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma "honey"))
-(bean (name "Cuba, Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma "caramel"))
-(bean (name "Peru, Medium Dark Roasted, Very Thin Body") (acidity 0) (category sweetness) (aroma "maple syrup"))
+(bean (name "Panama, Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma honey))
+(bean (name "Cuba, Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma caramel))
+(bean (name "Peru, Medium Dark Roasted, Very Thin Body") (acidity 0) (category sweetness) (aroma maple_syrup))
 
 ;Special*
 ;High Acidity, Low Bitterness
-(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma "smoky"))
-(bean (name "India, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma "brown roast"))
-(bean (name "Vietnam, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma "rubbery"))
+(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma smoky))
+(bean (name "India, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma brown_roast))
+(bean (name "Vietnam, Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma rubbery))
 ;Medium Acidity, Medium Bitterness
-(bean (name "Hawaii Kona, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "winey"))
-(bean (name "Blue Mountain Jamaica, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "mellow"))
-(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma "jasmine"))
+(bean (name "Hawaii Kona, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma winey))
+(bean (name "Blue Mountain Jamaica, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma mellow))
+(bean (name "Ethiopia, Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma jasmine))
 ;Low Acidity, High Bitterness
-(bean (name "Yemen, Medium High Roasted, Full Body") (acidity 0) (category special) (aroma "winey"))
-(bean (name "Java, High Full Roasted, Thin Body") (acidity 0) (category special) (aroma "woody"))
-(bean (name "Sumatra, Medium Roasted, Very Full Body") (acidity 0) (category special) (aroma "earthy"))
+(bean (name "Yemen, Medium High Roasted, Full Body") (acidity 0) (category special) (aroma winey))
+(bean (name "Java, High Full Roasted, Thin Body") (acidity 0) (category special) (aroma woody))
+(bean (name "Sumatra, Medium Roasted, Very Full Body") (acidity 0) (category special) (aroma earthy))
 
 )
 
@@ -140,7 +140,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "tangerine" "peach" "black cherry"))
+	(modify ?p(question "Let us get more specific?")(options tangerine peach black_cherry))
 	(retract ?n)
 )
 
@@ -149,7 +149,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "almond" "hazelnut" "walnut"))
+	(modify ?p(question "Let us get more specific?")(options almond hazelnut walnut))
 	(retract ?n)
 )
 
@@ -158,7 +158,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "honey" "caramal" "maple syrup"))
+	(modify ?p(question "Let us get more specific?")(options honey caramal maple_syrup))
 	(retract ?n)
 )
 
@@ -167,7 +167,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "winey" "woody" "earthy"))
+	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
 	(retract ?n)
 )
 
@@ -177,7 +177,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "raisin" "prune" "cherry"))
+	(modify ?p(question "Let us get more specific?")(options raisin prune cherry))
 	(retract ?n)
 )
 
@@ -186,7 +186,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "blackforest" "smooth nutty" "velvety"))
+	(modify ?p(question "Let us get more specific?")(options blackforest smooth_nutty velvety))
 	(retract ?n)
 )
 
@@ -195,7 +195,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "orange" "lemon" "lime"))
+	(modify ?p(question "Let us get more specific?")(options orange lemon lime))
 	(retract ?n)
 )
 
@@ -204,7 +204,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "winey" "mellow" "jasmine"))
+	(modify ?p(question "Let us get more specific?")(options winey mellow jasmine))
 	(retract ?n)
 )
 
@@ -214,7 +214,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "blueberry" "strawberry" "blackberry"))
+	(modify ?p(question "Let us get more specific?")(options blueberry strawberry blackberry))
 	(retract ?n)
 )
 
@@ -223,7 +223,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "chocolate" "dark chocolate" "double chocolate"))
+	(modify ?p(question "Let us get more specific?")(options chocolate dark_chocolate double_chocolate))
 	(retract ?n)
 )
 
@@ -232,7 +232,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "buttery" "vanilla" "cola"))
+	(modify ?p(question "Let us get more specific?")(options buttery vanilla cola))
 	(retract ?n)
 )
 
@@ -241,7 +241,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "smoky" "brown roast" "rubbery"))
+	(modify ?p(question "Let us get more specific?")(options smoky brown_roast rubbery))
 	(retract ?n)
 )
 
