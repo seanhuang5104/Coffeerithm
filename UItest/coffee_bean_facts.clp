@@ -140,7 +140,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "blueberry" "strawberry" "blackberry"))
+	(modify ?p(question "Let us get more specific?")(options "tangerine" "peach" "black cherry"))
 	(retract ?n)
 )
 
@@ -149,7 +149,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "chocolate" "dark chocolate" "double chocolate"))
+	(modify ?p(question "Let us get more specific?")(options "almond" "hazelnut" "walnut"))
 	(retract ?n)
 )
 
@@ -158,7 +158,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "buttery" "vanilla" "cola"))
+	(modify ?p(question "Let us get more specific?")(options "honey" "caramal" "maple syrup"))
 	(retract ?n)
 )
 
@@ -167,7 +167,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "smoky" "brown roast" "rubbery"))
+	(modify ?p(question "Let us get more specific?")(options "winey" "woody" "earthy"))
 	(retract ?n)
 )
 
@@ -214,7 +214,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "tangerine" "peach" "black cherry"))
+	(modify ?p(question "Let us get more specific?")(options "blueberry" "strawberry" "blackberry"))
 	(retract ?n)
 )
 
@@ -223,7 +223,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "almond" "hazelnut" "walnut"))
+	(modify ?p(question "Let us get more specific?")(options "chocolate" "dark chocolate" "double chocolate"))
 	(retract ?n)
 )
 
@@ -232,7 +232,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "honey" "caramel" "maple syrup"))
+	(modify ?p(question "Let us get more specific?")(options "buttery" "vanilla" "cola"))
 	(retract ?n)
 )
 
@@ -241,7 +241,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options "winey" "woody" "earthy"))
+	(modify ?p(question "Let us get more specific?")(options "smoky" "brown roast" "rubbery"))
 	(retract ?n)
 )
 
