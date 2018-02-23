@@ -8,6 +8,7 @@
      (slot sweetness (default any))
      (slot aroma)
      (slot bean_recommanded)
+     (slot brew_recommanded)
   (multislot fav-blends (default any))
   (multislot fav-beans (default any)))
 
