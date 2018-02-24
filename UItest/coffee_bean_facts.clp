@@ -112,7 +112,7 @@
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What aroma would you like?")(options winey woody earthy))
+	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
 	(modify ?k(milk 1)(acidity 0))
 	(retract ?n)
 )
@@ -122,7 +122,7 @@
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What aroma would you like?")(options winey woody earthy))
+	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
 	(modify ?k(milk 2)(acidity 0))
 	(retract ?n)
 )
