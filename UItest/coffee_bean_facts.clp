@@ -8,11 +8,6 @@
      (slot sweetness (default any))
      (slot aroma)
      (slot milk)
-     (slot choc_conc)
-     (slot foam)
-     (slot flavor)
-     (slot coffee_conc)
-     (slot hurry)
      (slot bean_recommanded)
      (slot brew_recommanded)
   (multislot fav-blends (default any))
@@ -98,43 +93,12 @@
 
 )
 
-;;*******************************
-;;* COFFEE BREW SELECTION FACTS *
-;;*******************************
-(deftemplate brew
-  (slot name (default ?NONE))
-  (slot acidity (default any))
-  (slot milk (default any))
-  (slot choc_conc (default any))
-  (slot foam (default any))
-  (slot flavor (default any))
-  (slot coffee_conc (default any))
-  (slot hurry (default any)))
-
-(deffacts the-coffee-brew-list 
-
-(brew (name "Cafe Latte")(acidity any)(milk 2)(choc_conc any)(foam any)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Cold Brew")(acidity 0)(milk 0)(choc_conc any)(foam any)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Drip Coffee")(acidity 1)(milk 0)(choc_conc any)(foam any)(flavor harsh)(coffee_conc any)(hurry any))
-(brew (name "French Press")(acidity 1)(milk 0)(choc_conc any)(foam any)(flavor smooth)(coffee_conc any)(hurry 1))
-(brew (name "Chemex")(acidity 1)(milk 0)(choc_conc any)(foam any)(flavor smooth)(coffee_conc any)(hurry 0))
-(brew (name "Americano")(acidity 2)(milk 0)(choc_conc any)(foam any)(flavor any)(coffee_conc 0)(hurry any))
-(brew (name "Espresso")(acidity 2)(milk 0)(choc_conc any)(foam any)(flavor any)(coffee_conc 1)(hurry any))
-(brew (name "Ristretto")(acidity 2)(milk 0)(choc_conc any)(foam any)(flavor any)(coffee_conc 2)(hurry any))
-(brew (name "Mocha")(acidity any)(milk 1)(choc_conc 2)(foam any)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Espressino")(acidity any)(milk 1)(choc_conc 1)(foam any)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Cappucino")(acidity any)(milk 1)(choc_conc 0)(foam 2)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Macchiato")(acidity any)(milk 1)(choc_conc 0)(foam 1)(flavor any)(coffee_conc any)(hurry any))
-(brew (name "Flat White")(acidity any)(milk 1)(choc_conc 0)(foam 0)(flavor any)(coffee_conc any)(hurry any))
-
-)
-
 ;;********************************************
 ;;* RULES                                    *
 ;;********************************************
 
 (defrule milk_amount_non
-	?n<-(answer_of "Amount of milk?" milk_non )
+	?n<-(answer_of "Amount of milk?" milk_non)
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
@@ -318,29 +282,27 @@
 ;;* BREW_rules *
 ;;**************
 (defrule milk_no_acidity_low
-	?n<-(answer_of "Amount of Milk?" none)
-	?p <- (nextQuestion(question "Amount of Milk?"))
-    (profile(name user)(acidity 0))
+	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?k <- (profile(name user))
+    (profile(name user)(acidity 0)(milk 0))
   	=>
-	(modify ?k(milk 0))
     (modify ?k(brew_recommanded "Cold Brew"))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med
-	?n<-(answer_of "Amount of Milk?" none)
+	?n<-(answer_of "Let us get more specific?" ?aroma)
 	?p <- (nextQuestion(question "Amount of Milk?"))
-    (profile(name user)(acidity 1))
+    (profile(name user)(acidity 1)(milk 0))
   	=>
 	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth harsh))
-	(modify ?k(milk 0))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_harsh
 	?n<-(answer_of "Do you prefer smooth or harsh coffees?" harsh)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(flavor harsh))
     (modify ?k(brew_recommanded "Drip Coffees"))
 	(retract ?n)
 )
@@ -348,69 +310,66 @@
 (defrule milk_no_acidity_med_smooth
 	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
+	?k <- (profile(name user))
   	=>
 	(modify ?p(question "Are you in a hurry?")(options yes no))
-    (modify ?k(flavor smooth))
-	(modify ?k(milk 0))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_smooth_hurry_yes
 	?n<-(answer_of "Are you in a hurry?" yes)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(hurry 1))
     (modify ?k(brew_recommanded "French Press"))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_smooth_hurry_no
 	?n<-(answer_of "Are you in a hurry?" no)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(hurry 0))
     (modify ?k(brew_recommanded "Chemex"))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_high
-	?n<-(answer_of "Amount of Milk?" none)
+	?n<-(answer_of "Let us get more specific?" ?aroma)
 	?p <- (nextQuestion(question "Amount of Milk?"))
-    (profile(name user)(acidity 2))
+    (profile(name user)(acidity 2)(milk 0)
   	=>
 	(modify ?p(question "Coffee Concentration?")(options low medium high))
-	(modify ?k(milk 0))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_high_coffee_conc_low
 	?n<-(answer_of "Coffee Concentration?" low)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(coffee_conc 0))
     (modify ?k(brew_recommanded "Americano"))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_high_coffee_conc_med
 	?n<-(answer_of "Coffee Concentration?" medium)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(coffee_conc 1))
     (modify ?k(brew_recommanded "Espresso"))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_high_coffee_conc_high
 	?n<-(answer_of "Coffee Concentration?" high)
+	?k <- (profile(name user))
   	=>
-    (modify ?k(coffee_conc 2))
     (modify ?k(brew_recommanded "Ristretto"))
 	(retract ?n)
 )
 
 (defrule milk_low
-	?n<-(answer_of "Amount of Milk?" low)
+	?n<-(answer_of "Amount of Milk?" milk_m)
 	?p <- (nextQuestion(question "Amount of Milk?"))
   	=>
 	(modify ?p(question "Add chocolate to your coffee?")(options no low high))
-	(modify ?k(milk 1))
 	(retract ?n)
 )
 
@@ -419,38 +378,37 @@
 	?p <- (nextQuestion(question "Add chocolate to your coffee?"))
   	=>
 	(modify ?p(question "Foam Level?")(options no low high))
-	(modify ?k(choc_conc 0))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_no_foam_no
 	?n<-(answer_of "Foam Level?" no)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(foam 0))
     (modify ?k(brew_recommanded "Flat White"))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_no_foam_low
 	?n<-(answer_of "Foam Level?" low)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(foam 1))
     (modify ?k(brew_recommanded "Macchiato"))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_no_foam_high
 	?n<-(answer_of "Foam Level?" high)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(foam 2))
     (modify ?k(brew_recommanded "Cappucino"))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_low
 	?n<-(answer_of "Add chocolate to your coffee?" low)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(choc_conc 1))
     (modify ?k(brew_recommanded "Espressino"))
 	(retract ?n)
 )
@@ -458,16 +416,16 @@
 
 (defrule milk_low_choc_conc_high
 	?n<-(answer_of "Add chocolate to your coffee?" high)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(choc_conc 2))
     (modify ?k(brew_recommanded "Mocha"))
 	(retract ?n)
 )
 
 (defrule milk_high
-	?n<-(answer_of "Amount of Milk?" high)
+	?n<-(answer_of "Amount of Milk?" milk_h)
+	?k <- (profile(name user))
   	=>
-	(modify ?k(milk 2))
     (modify ?k(brew_recommanded "Cafe Latte"))
 	(retract ?n)
 )
