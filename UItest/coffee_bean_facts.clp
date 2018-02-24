@@ -292,7 +292,7 @@
 
 (defrule milk_no_acidity_med
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Amount of milk?"))
+	?p <- (nextQuestion(question "Let us get more specific?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
 	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth harsh))
@@ -334,7 +334,7 @@
 
 (defrule milk_no_acidity_high
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Amount of milk?"))
+	?p <- (nextQuestion(question "Let us get more specific?"))
     (profile(name user)(acidity 2)(milk 0))
   	=>
 	(modify ?p(question "Coffee Concentration?")(options low medium high))
@@ -367,7 +367,7 @@
 
 (defrule milk_low
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Amount of milk?"))
+	?p <- (nextQuestion(question "Let us get more specific?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
 	(modify ?p(question "Add chocolate to your coffee?")(options no low high))
