@@ -287,6 +287,7 @@
     (profile(name user)(acidity 0)(milk 0))
   	=>
     (modify ?k(brew_recommanded "Cold Brew"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -304,6 +305,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Drip Coffees"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -321,6 +323,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "French Press"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -329,6 +332,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Chemex"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -346,6 +350,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Americano"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -354,6 +359,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Espresso"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -362,6 +368,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Ristretto"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -387,6 +394,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Flat White"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -395,6 +403,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Macchiato"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -403,6 +412,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Cappucino"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -411,6 +421,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Espressino"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -420,6 +431,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Mocha"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
@@ -429,6 +441,7 @@
 	(profile(name user)(milk 2)(acidity 0))
   	=>
     (modify ?k(brew_recommanded "Cafe Latte"))
+    (modify ?p(question "finished"))
 	(retract ?n)
 )
 
