@@ -20,7 +20,7 @@
  
 (deffacts profile-db
 	(profile (name user))
-	(nextQuestion (question "Amount of Milk?" ) (options milk_non milk_m milk_h))
+	(nextQuestion (question "Amount of milk?" ) (options milk_non milk_m milk_h))
 )
 
 ;;********************************
@@ -292,7 +292,7 @@
 
 (defrule milk_no_acidity_med
 	?n<-(answer_of "Let us get more specific?" ?aroma)
-	?p <- (nextQuestion(question "Amount of Milk?"))
+	?p <- (nextQuestion(question "Amount of milk?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
 	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth harsh))
@@ -334,7 +334,7 @@
 
 (defrule milk_no_acidity_high
 	?n<-(answer_of "Let us get more specific?" ?aroma)
-	?p <- (nextQuestion(question "Amount of Milk?"))
+	?p <- (nextQuestion(question "Amount of milk?"))
     (profile(name user)(acidity 2)(milk 0))
   	=>
 	(modify ?p(question "Coffee Concentration?")(options low medium high))
@@ -366,8 +366,8 @@
 )
 
 (defrule milk_low
-	?n<-(answer_of "Amount of Milk?" milk_m)
-	?p <- (nextQuestion(question "Amount of Milk?"))
+	?n<-(answer_of "Amount of milk?" milk_m)
+	?p <- (nextQuestion(question "Amount of milk?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
 	(modify ?p(question "Add chocolate to your coffee?")(options no low high))
@@ -424,7 +424,7 @@
 )
 
 (defrule milk_high
-	?n<-(answer_of "Amount of Milk?" milk_h)
+	?n<-(answer_of "Amount of milk?" milk_h)
 	?k <- (profile(name user))
 	(profile(name user)(milk 2)(acidity 0))
   	=>
