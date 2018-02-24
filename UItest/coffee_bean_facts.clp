@@ -132,6 +132,37 @@
 ;;********************************************
 ;;* RULES                                    *
 ;;********************************************
+
+(defrule milk_amount_non
+	?n<-(answer_of "Amount of milk?" milk_non )
+	?p <- (nextQuestion(question "Amount of milk?" ))
+             ?k <- (profile(name user))
+  	=>
+	(modify ?p(question "What is the acid intensity?")(options acid0 acid1 acid2))
+	(modify ?k(milk 0))
+	(retract ?n)
+)
+
+(defrule milk_amount_medium
+	?n<-(answer_of "Amount of milk?" milk_m )
+	?p <- (nextQuestion(question "Amount of milk?" ))
+             ?k <- (profile(name user))
+  	=>
+	(modify ?p(question "What aroma would you like?")(options winey woody earthy))
+	(modify ?k(milk 1)(acidity 0))
+	(retract ?n)
+)
+
+(defrule milk_amount_high
+	?n<-(answer_of "Amount of milk?" milk_h )
+	?p <- (nextQuestion(question "Amount of milk?" ))
+             ?k <- (profile(name user))
+  	=>
+	(modify ?p(question "What aroma would you like?")(options winey woody earthy))
+	(modify ?k(milk 2)(acidity 0)
+	(retract ?n)
+)
+
 ;;********************************************
 ;;* BEAN_select_aroma_rules                  *
 ;;********************************************
