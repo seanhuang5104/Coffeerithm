@@ -282,7 +282,7 @@
 ;;* BREW_rules *
 ;;**************
 (defrule milk_no_acidity_low
-	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?n<-(answer_of "brewing_start")
 	?k <- (profile(name user))
     (profile(name user)(acidity 0)(milk 0))
   	=>
@@ -291,7 +291,7 @@
 )
 
 (defrule milk_no_acidity_med
-	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?n<-(answer_of "brewing_start")
 	?p <- (nextQuestion(question "Amount of milk?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
@@ -333,7 +333,7 @@
 )
 
 (defrule milk_no_acidity_high
-	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?n<-(answer_of "brewing_start")
 	?p <- (nextQuestion(question "Amount of milk?"))
     (profile(name user)(acidity 2)(milk 0))
   	=>
@@ -366,7 +366,7 @@
 )
 
 (defrule milk_low
-	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?n<-(answer_of "brewing_start")
 	?p <- (nextQuestion(question "Amount of milk?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
@@ -424,7 +424,7 @@
 )
 
 (defrule milk_high
-	?n<-(answer_of "Let us get more specific?" ?aroma)
+	?n<-(answer_of "brewing_start")
 	?k <- (profile(name user))
 	(profile(name user)(milk 2)(acidity 0))
   	=>
@@ -441,6 +441,7 @@
 	=>
 	(modify ?k(aroma ?aroma))
 	(retract ?n)
+	(assert (answer_of "brewing_start"))
 )
 
 ;(load "C:\\Users\\sean_\\VSprojects\\UItest\\coffee_bean_facts.clp")
