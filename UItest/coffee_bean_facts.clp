@@ -366,7 +366,7 @@
 )
 
 (defrule milk_low
-	?n<-(answer_of "Amount of milk?" milk_m)
+	?n<-(answer_of "Let us get more specific?" ?aroma)
 	?p <- (nextQuestion(question "Amount of milk?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
@@ -424,7 +424,7 @@
 )
 
 (defrule milk_high
-	?n<-(answer_of "Amount of milk?" milk_h)
+	?n<-(answer_of "Let us get more specific?" ?aroma)
 	?k <- (profile(name user))
 	(profile(name user)(milk 2)(acidity 0))
   	=>
