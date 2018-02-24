@@ -20,7 +20,7 @@
  
 (deffacts profile-db
 	(profile (name user))
-	(nextQuestion (question "What is the acid intensity?" ) (options acid0 acid1 acid2))
+	(nextQuestion (question "Amount of Milk?" ) (options milk_non milk_m milk_h))
 )
 
 ;;********************************
@@ -368,6 +368,7 @@
 (defrule milk_low
 	?n<-(answer_of "Amount of Milk?" milk_m)
 	?p <- (nextQuestion(question "Amount of Milk?"))
+	(profile(name user)(milk 1)(acidity 0)
   	=>
 	(modify ?p(question "Add chocolate to your coffee?")(options no low high))
 	(retract ?n)
@@ -425,6 +426,7 @@
 (defrule milk_high
 	?n<-(answer_of "Amount of Milk?" milk_h)
 	?k <- (profile(name user))
+	(profile(name user)(milk 2)(acidity 0)
   	=>
     (modify ?k(brew_recommanded "Cafe Latte"))
 	(retract ?n)
