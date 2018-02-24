@@ -123,7 +123,7 @@
              ?k <- (profile(name user))
   	=>
 	(modify ?p(question "What aroma would you like?")(options winey woody earthy))
-	(modify ?k(milk 2)(acidity 0)
+	(modify ?k(milk 2)(acidity 0))
 	(retract ?n)
 )
 
@@ -335,7 +335,7 @@
 (defrule milk_no_acidity_high
 	?n<-(answer_of "Let us get more specific?" ?aroma)
 	?p <- (nextQuestion(question "Amount of Milk?"))
-    (profile(name user)(acidity 2)(milk 0)
+    (profile(name user)(acidity 2)(milk 0))
   	=>
 	(modify ?p(question "Coffee Concentration?")(options low medium high))
 	(retract ?n)
@@ -451,16 +451,5 @@
 	?k<-(bean(name ?name)(aroma ?aroma)(acidity ?acidity))
   	=>
 	(modify ?n(bean_recommanded ?name))
-	(retract ?k)
-)
-
-;;********************************************
-;;* BREW_recommandation_rules                *
-;;********************************************
-(defrule brew_recommand 
-	?n<-(profile(name user)(acidity ?acidity)(milk ?milk)(choc_conc ?choc_conc)(foam ?foam)(flavor ?flavor)(coffee_conc ?coffee_conc)(hurry ?hurry))	
-	?k<-(brew(name ?name)(acidity ?acidity)(milk ?milk)(choc_conc ?choc_conc)(foam ?foam)(flavor ?flavor)(coffee_conc ?coffee_conc)(hurry ?hurry))
-  	=>
-	(modify ?n(brew_recommanded ?name))
 	(retract ?k)
 )
