@@ -35,7 +35,8 @@ namespace QuestionUI
 
         //Path to find the pictures
         private String PicPath = "",Question="";
-        TransparentLabel lblTrans = new TransparentLabel();
+        //TransparentLabel lblTrans = new TransparentLabel();
+        Label lblTrans = new Label();
         //store option images
         private List<Image> ImageLibrary = new List<Image>();
         private List<Image> BlurImageLibrary = new List<Image>();
@@ -60,11 +61,10 @@ namespace QuestionUI
 
             MakeButtons(Items.Count);
            
-            lblTrans.Height = 50;
-        
-            lblTrans.Width = 2000;
-            lblTrans.Top = 50;
-            lblTrans.Left = 50;
+            lblTrans.Height = 200;
+            lblTrans.Width = 1024;
+            lblTrans.Top = 0;
+            lblTrans.Left = 0;
             lblTrans.Text = question;
             lblTrans.Font = new Font("Consolas", 30);
             this.Controls.Add(lblTrans);
@@ -114,8 +114,8 @@ namespace QuestionUI
                 //add image to library ,using index in tag to trace.
                 
                 //ImageLibrary.Add(Image.FromFile(PicPath + InternalItems[i] + ".jpg"));
-                ImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath +"C"+ InternalItems[i] + ".jpg", ButtonWidth, 650));
-                BlurImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + InternalItems[i] + ".jpg", ButtonWidth, 650));
+                ImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath +"C"+ InternalItems[i] + ".jpg", ButtonWidth, 768));
+                BlurImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + InternalItems[i] + ".jpg", ButtonWidth, 768));
                 Button Right = new Button();
                 //Right.Tag = InternalItems[i];
                 Right.Tag = i.ToString();
@@ -123,7 +123,7 @@ namespace QuestionUI
                 Right.Image = BlurImageLibrary[i];
                 Right.Margin = new Padding(0,0,0,0);
                 Right.Location = new Point(ButtonWidth * i, 0);
-                Right.Size = new Size(ButtonWidth, this.Size.Height);
+                Right.Size = new Size(ButtonWidth, 768);
                 Right.MouseClick += button1_Click;
                 Right.MouseHover += button1_MouseHover;
                 Right.MouseLeave += button1_MouseLeave;
@@ -134,23 +134,42 @@ namespace QuestionUI
                 Right.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
                 Right.FlatAppearance.MouseOverBackColor = Color.Transparent;
+
+                
                 this.Controls.Add(Right);
+                
                 
             }
         }
-       
+
+
         private void button1_MouseHover(object sender, EventArgs e)
         {
             Button me = (Button)sender;
             me.Image = ImageLibrary[Convert.ToInt16(me.Tag)];
-            lblTrans.Refresh();
+
+            Label optionName = new Label();
+            optionName.Text = InternalItems[Convert.ToInt16(me.Tag)];
+            optionName.Size = new Size(me.Width, 100);
+            optionName.Location = new Point(0, 668);
+            optionName.Parent = me;
+            optionName.BackColor = Color.Wheat;
+            optionName.Font = new Font("consolas", 16);
+            optionName.TextAlign = ContentAlignment.MiddleCenter;
+            optionName.BringToFront();
+            optionName.Show();
+            //lblTrans.Refresh();
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            Button me = (Button)sender;
-            me.Image = BlurImageLibrary[Convert.ToInt16(me.Tag)];
-            lblTrans.Refresh();
+            
+                Button me = (Button)sender;
+                Label childLabel = (Label)me.GetChildAtPoint(new Point(0, 680));
+                if(childLabel != null)
+                    childLabel.Dispose();
+                me.Image = BlurImageLibrary[Convert.ToInt16(me.Tag)];
+                //lblTrans.Refresh();
         }
     }
 
