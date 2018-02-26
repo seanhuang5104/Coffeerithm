@@ -1,0 +1,11 @@
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\bin\Debug\Properties\NotFound.png
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\bin\Debug\UItest.exe.config
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\bin\Debug\UItest.exe
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\bin\Debug\UItest.pdb
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.UI.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.Properties.Resources.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.csproj.GenerateResource.Cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.csproj.CoreCompileInputs.cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\UItest.exe
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\UItest.pdb
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.csprojResolveAssemblyReference.cache

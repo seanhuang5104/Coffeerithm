@@ -1,0 +1,5 @@
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\Debug\Main.Form1.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\Debug\Main.Properties.Resources.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\Debug\Main.csproj.GenerateResource.Cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
