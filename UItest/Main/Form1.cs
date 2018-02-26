@@ -17,8 +17,8 @@ namespace Main
         private CLIPSNET.Environment clips;
         private string picPath = "";
         private List<string> factsAssert = new List<string>();
-        private List<string> options = new List<string>() { "acid0", "acid1" };
-        private string question = "What is the acid intensity?";
+        private List<string> options = new List<string>() { "milk_non", "milk_m","milk_h" };
+        private string question = "Amount of milk?";
         private bool questionCompleted = false;
         public Form1()
         {
@@ -69,12 +69,12 @@ namespace Main
                 };
                 uitest.Dispose();
             }
-            string result = "";
-            for (int i = 0; i < options.Count; i++)
+
+            QuestionUI.Result recommend = new QuestionUI.Result(options, picPath);
+            if (DialogResult.OK == recommend.ShowDialog())
             {
-                result += options[i].ToString();
-            }
-            MessageBox.Show(result);
+                recommend.Dispose();
+            };
             button1.Visible = true;
             button2.Visible = true;
         }
@@ -115,6 +115,7 @@ namespace Main
             String evalStr = "(find-fact ((?f nextQuestion)) TRUE)";
             FactAddressValue fv = (FactAddressValue)((MultifieldValue)clips.Eval(evalStr))[0];
 
+            options.Clear();
             //Get question string .
             LexemeValue damf = (LexemeValue)fv.GetFactSlot("question");
             question = damf.GetLexemeValue();
@@ -122,11 +123,21 @@ namespace Main
             if (question == "finished")
             {
                 questionCompleted = true;
+                evalStr = "(find-fact ((?f profile)) TRUE)";
+                fv = (FactAddressValue)((MultifieldValue)clips.Eval(evalStr))[0];
+                string bean_name = ((LexemeValue)fv.GetFactSlot("bean_recommanded")).GetLexemeValue();
+                string brew_name = ((LexemeValue)fv.GetFactSlot("brew_recommanded")).GetLexemeValue();
+                options.Add(bean_name);
+                options.Add("bean remark");
+                options.Add(brew_name);
+                options.Add("brew_remark");
+                options.Add("test");
+                return;
             }
 
             //Get available options
             MultifieldValue vamf = (MultifieldValue)fv.GetFactSlot("options");
-            options.Clear();
+         
             for (int i = 0; i < vamf.Count; i++)
             {
                 LexemeValue va = (LexemeValue)vamf[i];
