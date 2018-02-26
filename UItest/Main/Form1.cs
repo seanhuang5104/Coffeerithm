@@ -17,8 +17,8 @@ namespace Main
         private CLIPSNET.Environment clips;
         private string picPath = "";
         private List<string> factsAssert = new List<string>();
-        private List<string> options = new List<string>() { "milk_non", "milk_m","milk_h" };
-        private string question = "Amount of milk?";
+        private List<string> options;
+        private string question;
         private bool questionCompleted = false;
         public Form1()
         {
@@ -40,7 +40,6 @@ namespace Main
             {
                 clips.Load(clpFiles[0].ToString());
             }
-            clips.Reset();
             //Get directory for pictures
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.SelectedPath = System.IO.Path.Combine(Application.StartupPath);
@@ -56,10 +55,14 @@ namespace Main
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            clips.Reset();
             button1.Visible = false;
             button2.Visible = false;
+            question = "Amount of milk?";
+            factsAssert.Clear();
+            options = new List<string>() { "milk_non", "milk_m", "milk_h" };
             
-            while(!questionCompleted)
+            while (!questionCompleted)
             {
                 QuestionUI.UI uitest = new QuestionUI.UI(options, question, picPath);
                 if (DialogResult.OK == uitest.ShowDialog())
@@ -74,7 +77,9 @@ namespace Main
             if (DialogResult.OK == recommend.ShowDialog())
             {
                 recommend.Dispose();
+                questionCompleted = false;
             };
+            
             button1.Visible = true;
             button2.Visible = true;
         }
@@ -88,6 +93,7 @@ namespace Main
 
         private void button2_Click(object sender, EventArgs e)
         {
+            clips.Dispose();
             this.Close();
         }
 
