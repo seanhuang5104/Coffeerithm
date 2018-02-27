@@ -15,6 +15,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Drawing.Text;
+using System.Linq;
 
 namespace QuestionUI
 {
@@ -247,7 +248,12 @@ namespace QuestionUI
 
         public static Image PerformImageResizeAndPutOnCanvas(string pFileNameWpath, int pWidth, int pHeight)
         {
-            if (!File.Exists(pFileNameWpath))
+            var directory = Path.GetDirectoryName(pFileNameWpath);
+            var files = Directory.GetFiles(directory, "*.jpg");
+            var fileName = Path.GetFileName(pFileNameWpath);
+            var matchedFile = files.FirstOrDefault(x => Path.GetFileName(x).ToLower() == fileName.ToLower());
+
+            if (matchedFile== null)
             {
                 Assembly myAssembly = Assembly.GetExecutingAssembly();
                 Stream myStream = myAssembly.GetManifestResourceStream("QuestionUI.Properties.NotFound.png");

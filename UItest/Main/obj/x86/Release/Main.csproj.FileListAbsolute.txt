@@ -1,0 +1,15 @@
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\Properties\NotFound.png
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\Main.exe.config
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\Main.exe
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\Main.pdb
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\CLIPSCLRWrapper.dll
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\UItest.exe
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\UItest.pdb
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\bin\x86\Release\UItest.exe.config
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.csprojResolveAssemblyReference.cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.Form1.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.Properties.Resources.resources
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.GenerateResource.Cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.CoreCompileInputs.cache
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.exe
+C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.pdb
