@@ -251,7 +251,7 @@ namespace QuestionUI
             var directory = Path.GetDirectoryName(pFileNameWpath);
             var files = Directory.GetFiles(directory, "*.jpg");
             var fileName = Path.GetFileName(pFileNameWpath);
-            var matchedFile = files.FirstOrDefault(x => Path.GetFileName(x).ToLower() == fileName.ToLower());
+            var matchedFile = files.FirstOrDefault(x => Path.GetFileName(x).ToLower() == fileName.Replace("_", "").ToLower());
 
             if (matchedFile== null)
             {
@@ -262,7 +262,7 @@ namespace QuestionUI
             }
 
             Image imgBef;
-            imgBef = Image.FromFile(pFileNameWpath);
+            imgBef = Image.FromFile(matchedFile);
       
 
             Image _imgR;
