@@ -8,7 +8,9 @@
      (slot aroma)
      (slot milk)
      (slot bean_recommanded)
+     (slot bean_remark)
      (slot brew_recommanded)
+     (slot brew_remark)
   (multislot fav-blends (default any))
   (multislot fav-beans (default any)))
 
