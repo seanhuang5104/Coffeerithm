@@ -154,7 +154,7 @@
 )
 
 (defrule acid_high
-	?n<-(answer_of "What is the acid intensity?" bitter )
+	?n<-(answer_of "What is the acid intensity?" high )
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
