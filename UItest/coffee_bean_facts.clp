@@ -100,17 +100,17 @@
 ;;********************************************
 
 (defrule milk_amount_non
-	?n<-(answer_of "Amount of milk?" milk_non)
+	?n<-(answer_of "Amount of milk?" pure)
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
-	(modify ?p(question "What is the acid intensity?")(options acid0 acid1 acid2))
+	(modify ?p(question "What is the acid intensity?")(options high balanced bitter))
 	(modify ?k(milk 0))
 	(retract ?n)
 )
 
 (defrule milk_amount_medium
-	?n<-(answer_of "Amount of milk?" milk_m )
+	?n<-(answer_of "Amount of milk?" little )
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
@@ -120,7 +120,7 @@
 )
 
 (defrule milk_amount_high
-	?n<-(answer_of "Amount of milk?" milk_h )
+	?n<-(answer_of "Amount of milk?" milky )
 	?p <- (nextQuestion(question "Amount of milk?" ))
              ?k <- (profile(name user))
   	=>
@@ -134,7 +134,7 @@
 ;;********************************************
 
 (defrule acid_low
-	?n<-(answer_of "What is the acid intensity?" acid0 )
+	?n<-(answer_of "What is the acid intensity?" bitter )
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
@@ -144,7 +144,7 @@
 )
 
 (defrule acid_mid
-	?n<-(answer_of "What is the acid intensity?" acid1 )
+	?n<-(answer_of "What is the acid intensity?" balanced )
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
@@ -154,7 +154,7 @@
 )
 
 (defrule acid_high
-	?n<-(answer_of "What is the acid intensity?" acid2 )
+	?n<-(answer_of "What is the acid intensity?" bitter )
 	?p <- (nextQuestion(question "What is the acid intensity?" ))
              ?k <- (profile(name user))
   	=>
