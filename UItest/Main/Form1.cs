@@ -60,7 +60,7 @@ namespace Main
             button2.Visible = false;
             question = "Amount of milk?";
             factsAssert.Clear();
-            options = new List<string>() { "pure coffee", "little bit", "milky" };
+            options = new List<string>() { "pure", "little", "milky" };
             
             while (!questionCompleted)
             {
