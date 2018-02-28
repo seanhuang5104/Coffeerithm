@@ -100,33 +100,61 @@
 ;;********************************************
 
 (defrule milk_amount_non
+
 	?n<-(answer_of "Amount of milk?" pure)
+
 	?p <- (nextQuestion(question "Amount of milk?" ))
+
              ?k <- (profile(name user))
+
   	=>
-	(modify ?p(question "What is the acid intensity?")(options high balanced bitter))
+
+	(modify ?p(question "Like it acid or bitter?")(options acid balanced bitter))
+
 	(modify ?k(milk 0))
+
 	(retract ?n)
+
 )
+
+
 
 (defrule milk_amount_medium
+
 	?n<-(answer_of "Amount of milk?" little )
+
 	?p <- (nextQuestion(question "Amount of milk?" ))
+
              ?k <- (profile(name user))
+
   	=>
+
 	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
+
 	(modify ?k(milk 1)(acidity 0))
+
 	(retract ?n)
+
 )
 
+
+
 (defrule milk_amount_high
+
 	?n<-(answer_of "Amount of milk?" milky )
+
 	?p <- (nextQuestion(question "Amount of milk?" ))
+
              ?k <- (profile(name user))
+
   	=>
+
 	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
+
 	(modify ?k(milk 2)(acidity 0))
+
 	(retract ?n)
+
 )
 
 ;;********************************************
@@ -134,33 +162,61 @@
 ;;********************************************
 
 (defrule acid_low
-	?n<-(answer_of "What is the acid intensity?" bitter )
-	?p <- (nextQuestion(question "What is the acid intensity?" ))
+
+	?n<-(answer_of "Like it acid or bitter?" bitter )
+
+	?p <- (nextQuestion(question "Like it acid or bitter?" ))
+
              ?k <- (profile(name user))
+
   	=>
+
 	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+
 	(modify ?k(acidity 0))
+
 	(retract ?n)
+
 )
+
+
 
 (defrule acid_mid
-	?n<-(answer_of "What is the acid intensity?" balanced )
-	?p <- (nextQuestion(question "What is the acid intensity?" ))
+
+	?n<-(answer_of "Like it acid or bitter?" balanced )
+
+	?p <- (nextQuestion(question "Like it acid or bitter?" ))
+
              ?k <- (profile(name user))
+
   	=>
+
 	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+
 	(modify ?k(acidity 1))
+
 	(retract ?n)
+
 )
 
+
+
 (defrule acid_high
-	?n<-(answer_of "What is the acid intensity?" high )
-	?p <- (nextQuestion(question "What is the acid intensity?" ))
+
+	?n<-(answer_of "Like it acid or bitter?" acid)
+
+	?p <- (nextQuestion(question "Like it acid or bitter?" ))
+
              ?k <- (profile(name user))
+
   	=>
+
 	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+
 	(modify ?k(acidity 2))
+
 	(retract ?n)
+
 )
 
 ;;************************************************
