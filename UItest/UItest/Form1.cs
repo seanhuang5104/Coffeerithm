@@ -62,7 +62,7 @@ namespace QuestionUI
 
             MakeButtons(Items.Count);
            
-            lblTrans.Height = 200;
+            lblTrans.Height = 100;
             lblTrans.Width = 1024;
             lblTrans.Top = 0;
             lblTrans.Left = 0;
@@ -71,6 +71,8 @@ namespace QuestionUI
             this.Controls.Add(lblTrans);
             lblTrans.Visible = true;
             lblTrans.BringToFront();
+            lblTrans.TextAlign = ContentAlignment.MiddleCenter;
+            lblTrans.BackColor = Color.RosyBrown;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -150,12 +152,12 @@ namespace QuestionUI
             me.Image = ImageLibrary[Convert.ToInt16(me.Tag)];
 
             Label optionName = new Label();
-            optionName.Text = InternalItems[Convert.ToInt16(me.Tag)];
+            optionName.Text = InternalItems[Convert.ToInt16(me.Tag)].ToUpper();
             optionName.Size = new Size(me.Width, 100);
             optionName.Location = new Point(0, 668);
             optionName.Parent = me;
-            optionName.BackColor = Color.Wheat;
-            optionName.Font = new Font("consolas", 16);
+            optionName.BackColor = Color.RosyBrown;
+            optionName.Font = new Font("consolas", 20);
             optionName.TextAlign = ContentAlignment.MiddleCenter;
             optionName.BringToFront();
             optionName.Show();
