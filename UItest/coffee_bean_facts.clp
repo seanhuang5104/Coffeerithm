@@ -22,7 +22,7 @@
  
 (deffacts profile-db
 	(profile (name user))
-	(nextQuestion (question "Amount of milk?" ) (options milk_non milk_m milk_h))
+	(nextQuestion (question "Amount of milk?" ) (options pure little milky))
 )
 
 ;;********************************
