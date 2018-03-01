@@ -470,7 +470,7 @@
 	?p <- (nextQuestion(question "Foam Level?"))
 	?k <- (profile(name user))
   	=>
-    (modify ?k(brew_recommanded "Macchiato")(brew_remark "Macchiato is an espresso-based coffee beverage consisting mostly of coffee with a small amount of milk. Translating from the Italian phrase meaning marked coffee, this drink is made by "marking" a single shot of espresso with a few drops of frothed milk and served in a demitasse."))
+    (modify ?k(brew_recommanded "Macchiato")(brew_remark "Macchiato is an espresso-based coffee beverage consisting mostly of coffee with a small amount of milk. Translating from the Italian phrase meaning marked coffee, this drink is made by marking a single shot of espresso with a few drops of frothed milk and served in a demitasse."))
     (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
