@@ -20,6 +20,7 @@ namespace QuestionUI
             brew_type.Text = item[2];
             brew_remark.Text = item[3];
             //pictureBox1.Image = Image.FromFile(path + "\\"+item[4] + ".jpg");
+            mood_modifier.Text = item[5];
         }
 
         private void button1_Click(object sender, EventArgs e)

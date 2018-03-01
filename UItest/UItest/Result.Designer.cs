@@ -35,46 +35,48 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mood_modifier = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bean_name
             // 
             this.bean_name.AutoSize = true;
-            this.bean_name.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bean_name.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bean_name.Location = new System.Drawing.Point(447, 78);
             this.bean_name.Name = "bean_name";
-            this.bean_name.Size = new System.Drawing.Size(100, 22);
+            this.bean_name.Size = new System.Drawing.Size(120, 26);
             this.bean_name.TabIndex = 0;
             this.bean_name.Text = "bean_name";
             // 
             // bean_remark
             // 
             this.bean_remark.AutoSize = true;
-            this.bean_remark.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bean_remark.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bean_remark.Location = new System.Drawing.Point(447, 128);
             this.bean_remark.Name = "bean_remark";
-            this.bean_remark.Size = new System.Drawing.Size(120, 22);
+            this.bean_remark.Size = new System.Drawing.Size(144, 26);
             this.bean_remark.TabIndex = 0;
             this.bean_remark.Text = "bean_remark";
             // 
             // brew_type
             // 
             this.brew_type.AutoSize = true;
-            this.brew_type.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brew_type.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brew_type.Location = new System.Drawing.Point(447, 212);
             this.brew_type.Name = "brew_type";
-            this.brew_type.Size = new System.Drawing.Size(100, 22);
+            this.brew_type.Size = new System.Drawing.Size(120, 26);
             this.brew_type.TabIndex = 0;
             this.brew_type.Text = "brew_type";
             // 
             // brew_remark
             // 
             this.brew_remark.AutoSize = true;
-            this.brew_remark.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brew_remark.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brew_remark.Location = new System.Drawing.Point(447, 261);
             this.brew_remark.Name = "brew_remark";
-            this.brew_remark.Size = new System.Drawing.Size(120, 22);
+            this.brew_remark.Size = new System.Drawing.Size(144, 26);
             this.brew_remark.TabIndex = 0;
             this.brew_remark.Text = "brew_remark";
             // 
@@ -89,10 +91,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(451, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 37);
+            this.label1.Size = new System.Drawing.Size(460, 47);
             this.label1.TabIndex = 2;
             this.label1.Text = "May we present you :";
             // 
@@ -107,6 +109,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(448, 584);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 26);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tips for barasta:";
+            // 
+            // mood_modifier
+            // 
+            this.mood_modifier.AutoSize = true;
+            this.mood_modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mood_modifier.Location = new System.Drawing.Point(450, 620);
+            this.mood_modifier.Name = "mood_modifier";
+            this.mood_modifier.Size = new System.Drawing.Size(60, 24);
+            this.mood_modifier.TabIndex = 5;
+            this.mood_modifier.Text = "label3";
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +136,8 @@
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.ControlBox = false;
+            this.Controls.Add(this.mood_modifier);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -139,5 +163,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label mood_modifier;
     }
 }

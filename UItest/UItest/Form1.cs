@@ -115,14 +115,10 @@ namespace QuestionUI
             for (int i = 0; i < BtnCount; i++)
             {
                 //add image to library ,using index in tag to trace.
-                
-                //ImageLibrary.Add(Image.FromFile(PicPath + InternalItems[i] + ".jpg"));
                 ImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath +"C"+ InternalItems[i] + ".jpg", ButtonWidth, 768));
                 BlurImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + InternalItems[i] + ".jpg", ButtonWidth, 768));
                 Button Right = new Button();
-                //Right.Tag = InternalItems[i];
                 Right.Tag = i.ToString();
-                //Right.Image = Image.FromFile(PicPath + Right.Tag + ".jpg");
                 Right.Image = BlurImageLibrary[i];
                 Right.Margin = new Padding(0,0,0,0);
                 Right.Location = new Point(ButtonWidth * i, 0);
@@ -161,7 +157,6 @@ namespace QuestionUI
             optionName.TextAlign = ContentAlignment.MiddleCenter;
             optionName.BringToFront();
             optionName.Show();
-            //lblTrans.Refresh();
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -172,7 +167,6 @@ namespace QuestionUI
                 if(childLabel != null)
                     childLabel.Dispose();
                 me.Image = BlurImageLibrary[Convert.ToInt16(me.Tag)];
-                //lblTrans.Refresh();
         }
     }
 
@@ -277,7 +271,7 @@ namespace QuestionUI
             return _img2;
         }
     }
-
+    /*
     public class TransparentLabel : Control
     {
         public TransparentLabel()
@@ -308,5 +302,5 @@ namespace QuestionUI
             }
         }
     }
-
+    */
 }
