@@ -247,7 +247,7 @@ namespace QuestionUI
             var directory = Path.GetDirectoryName(pFileNameWpath);
             var files = Directory.GetFiles(directory, "*.jpg");
             var fileName = Path.GetFileName(pFileNameWpath);
-            var matchedFile = files.FirstOrDefault(x => Path.GetFileName(x).ToLower() == fileName.Replace("_", "").ToLower());
+            var matchedFile = files.FirstOrDefault(x => Path.GetFileName(x).ToLower() == fileName.ToLower());
 
             if (matchedFile== null)
             {
