@@ -73,7 +73,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CLIPSCLRWrapper">
-      <HintPath>..\lib\CLIPS\CLIPSCLRWrapper.dll</HintPath>
+      <HintPath>..\lib\CLIPS\x64\CLIPSCLRWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
