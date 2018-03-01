@@ -11,6 +11,7 @@
      (slot bean_remark)
      (slot brew_recommanded)
      (slot brew_remark)
+     (slot mood_modifier)
   (multislot fav-blends (default any))
   (multislot fav-beans (default any)))
 
@@ -346,7 +347,7 @@
     	(profile(name user)(acidity 0)(milk 0))
   	=>
     (modify ?k(brew_recommanded "Cold Brew"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -384,7 +385,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "French Press"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -394,7 +395,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Chemex"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -413,7 +414,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Americano"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -423,7 +424,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Espresso"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -433,7 +434,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Ristretto"))
-   	(modify ?p(question "finished"))
+   	(modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -460,7 +461,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Flat White"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -470,7 +471,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Macchiato"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -480,7 +481,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Cappucino"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -490,7 +491,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Espressino"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -501,7 +502,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Mocha"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
 
@@ -512,10 +513,52 @@
 	(profile(name user)(milk 2)(acidity 0))
   	=>
     (modify ?k(brew_recommanded "Cafe Latte"))
-    (modify ?p(question "finished"))
+    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
+	(retract ?n)
+)
+;;********************************************
+;;* mood rules here                          *
+;;********************************************
+
+(defrule mood_happy
+	?n<-(answer_of "How do you feel today?" happy)
+	?p <- (nextQuestion(question "How do you feel today?"))
+	?k <- (profile(name user))
+  	=>
+        (modify ?k(mood_modifier "Customer may like additional toppings."))
+        (modify ?p(question "finished"))
 	(retract ?n)
 )
 
+(defrule mood_upset
+	?n<-(answer_of "How do you feel today?" upset)
+	?p <- (nextQuestion(question "How do you feel today?"))
+	?k <- (profile(name user))
+  	=>
+        (modify ?k(mood_modifier "Add somme cocoa powder to cheer them up."))
+        (modify ?p(question "finished"))
+	(retract ?n)
+)
+
+(defrule mood_anxious
+	?n<-(answer_of "How do you feel today?" anxious)
+	?p <- (nextQuestion(question "How do you feel today?"))
+	?k <- (profile(name user))
+  	=>
+        (modify ?k(mood_modifier "Reduce sugar level to 50%, half an expresso shot. Add cocoa powder."))
+        (modify ?p(question "finished"))
+	(retract ?n)
+)
+
+(defrule mood_sleepy
+	?n<-(answer_of "How do you feel today?" sleepy)
+	?p <- (nextQuestion(question "How do you feel today?"))
+	?k <- (profile(name user))
+  	=>
+        (modify ?k(mood_modifier "Suggest double expresso shots."))
+        (modify ?p(question "finished"))
+	(retract ?n)
+)
 ;;********************************************
 ;;* modify user profile                      *
 ;;********************************************
@@ -535,8 +578,8 @@
 ;;********************************************
 (defrule bean_recommand 
 	?n<-(profile(name user)(aroma ?aroma)(acidity ?acidity))	
-	?k<-(bean(name ?name)(aroma ?aroma)(acidity ?acidity))
+	?k<-(bean(name ?name)(aroma ?aroma)(acidity ?acidity)(remark ?remark))
   	=>
-	(modify ?n(bean_recommanded ?name))
+	(modify ?n(bean_recommanded ?name)(bean_remark ?remark))
 	(retract ?k)
 )
