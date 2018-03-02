@@ -23,6 +23,7 @@ namespace Main
         public Form1()
         {
             InitializeComponent();
+            
             this.WindowState = FormWindowState.Maximized;
             clips = new CLIPSNET.Environment();
 
@@ -134,12 +135,13 @@ namespace Main
                 string bean_name = ((LexemeValue)fv.GetFactSlot("bean_recommanded")).GetLexemeValue();
                 string bean_remark = ((LexemeValue)fv.GetFactSlot("bean_remark")).GetLexemeValue();
                 string brew_name = ((LexemeValue)fv.GetFactSlot("brew_recommanded")).GetLexemeValue();
+                string brew_remark = ((LexemeValue)fv.GetFactSlot("brew_remark")).GetLexemeValue();
                 string mood_modifier = ((LexemeValue)fv.GetFactSlot("mood_modifier")).GetLexemeValue();
                 options.Add(bean_name);
                 options.Add(bean_remark);
                 options.Add(brew_name);
-                options.Add("brew_remark");
-                options.Add("test");
+                options.Add(brew_remark);
+                options.Add("C"+brew_name);
                 options.Add(mood_modifier);
 
                 return;
