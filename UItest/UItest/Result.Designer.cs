@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.mood_modifier = new System.Windows.Forms.Label();
+            this.mood_modifier = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +101,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(593, 707);
+            this.button1.Location = new System.Drawing.Point(693, 707);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(309, 49);
             this.button1.TabIndex = 3;
@@ -121,13 +121,12 @@
             // 
             // mood_modifier
             // 
-            this.mood_modifier.AutoSize = true;
-            this.mood_modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mood_modifier.Location = new System.Drawing.Point(450, 620);
+            this.mood_modifier.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mood_modifier.Location = new System.Drawing.Point(453, 613);
+            this.mood_modifier.Multiline = true;
             this.mood_modifier.Name = "mood_modifier";
-            this.mood_modifier.Size = new System.Drawing.Size(60, 24);
-            this.mood_modifier.TabIndex = 5;
-            this.mood_modifier.Text = "label3";
+            this.mood_modifier.Size = new System.Drawing.Size(549, 88);
+            this.mood_modifier.TabIndex = 6;
             // 
             // Result
             // 
@@ -164,6 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label mood_modifier;
+        private System.Windows.Forms.TextBox mood_modifier;
     }
 }
