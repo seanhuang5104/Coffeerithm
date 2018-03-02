@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.IO;
 
 namespace QuestionUI
 {
@@ -19,8 +21,15 @@ namespace QuestionUI
             bean_remark.Text = item[1];
             brew_type.Text = item[2];
             brew_remark.Text = item[3];
-            //pictureBox1.Image = Image.FromFile(path + "\\"+item[4] + ".jpg");
-            mood_modifier.Text = item[5];
+            if (!File.Exists(path + "\\" + item[4] + ".jpg"))
+            {
+                Assembly myAssembly = Assembly.GetExecutingAssembly();
+                Stream myStream = myAssembly.GetManifestResourceStream("QuestionUI.Properties.NotFound.png");
+                pictureBox1.Image = new Bitmap(myStream);
+            }
+            else
+                pictureBox1.Image = Image.FromFile(path + "\\" + item[4] + ".jpg");
+            mood_modifier.Text = item[5].Replace(".",System.Environment.NewLine);
         }
 
         private void button1_Click(object sender, EventArgs e)

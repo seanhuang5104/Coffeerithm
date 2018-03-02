@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.bean_name = new System.Windows.Forms.Label();
-            this.bean_remark = new System.Windows.Forms.Label();
             this.brew_type = new System.Windows.Forms.Label();
-            this.brew_remark = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.mood_modifier = new System.Windows.Forms.TextBox();
+            this.brew_remark = new System.Windows.Forms.TextBox();
+            this.bean_remark = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,16 +50,6 @@
             this.bean_name.TabIndex = 0;
             this.bean_name.Text = "bean_name";
             // 
-            // bean_remark
-            // 
-            this.bean_remark.AutoSize = true;
-            this.bean_remark.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bean_remark.Location = new System.Drawing.Point(447, 128);
-            this.bean_remark.Name = "bean_remark";
-            this.bean_remark.Size = new System.Drawing.Size(144, 26);
-            this.bean_remark.TabIndex = 0;
-            this.bean_remark.Text = "bean_remark";
-            // 
             // brew_type
             // 
             this.brew_type.AutoSize = true;
@@ -69,16 +59,6 @@
             this.brew_type.Size = new System.Drawing.Size(120, 26);
             this.brew_type.TabIndex = 0;
             this.brew_type.Text = "brew_type";
-            // 
-            // brew_remark
-            // 
-            this.brew_remark.AutoSize = true;
-            this.brew_remark.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brew_remark.Location = new System.Drawing.Point(447, 261);
-            this.brew_remark.Name = "brew_remark";
-            this.brew_remark.Size = new System.Drawing.Size(144, 26);
-            this.brew_remark.TabIndex = 0;
-            this.brew_remark.Text = "brew_remark";
             // 
             // pictureBox1
             // 
@@ -128,6 +108,24 @@
             this.mood_modifier.Size = new System.Drawing.Size(549, 88);
             this.mood_modifier.TabIndex = 6;
             // 
+            // brew_remark
+            // 
+            this.brew_remark.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brew_remark.Location = new System.Drawing.Point(452, 241);
+            this.brew_remark.Multiline = true;
+            this.brew_remark.Name = "brew_remark";
+            this.brew_remark.Size = new System.Drawing.Size(550, 145);
+            this.brew_remark.TabIndex = 7;
+            // 
+            // bean_remark
+            // 
+            this.bean_remark.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bean_remark.Location = new System.Drawing.Point(453, 107);
+            this.bean_remark.Multiline = true;
+            this.bean_remark.Name = "bean_remark";
+            this.bean_remark.Size = new System.Drawing.Size(549, 84);
+            this.bean_remark.TabIndex = 8;
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,14 +133,14 @@
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.ControlBox = false;
+            this.Controls.Add(this.bean_remark);
+            this.Controls.Add(this.brew_remark);
             this.Controls.Add(this.mood_modifier);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.brew_remark);
             this.Controls.Add(this.brew_type);
-            this.Controls.Add(this.bean_remark);
             this.Controls.Add(this.bean_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Result";
@@ -156,13 +154,13 @@
         #endregion
 
         private System.Windows.Forms.Label bean_name;
-        private System.Windows.Forms.Label bean_remark;
         private System.Windows.Forms.Label brew_type;
-        private System.Windows.Forms.Label brew_remark;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox mood_modifier;
+        private System.Windows.Forms.TextBox brew_remark;
+        private System.Windows.Forms.TextBox bean_remark;
     }
 }
