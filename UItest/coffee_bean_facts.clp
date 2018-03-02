@@ -59,7 +59,7 @@
 (bean (name "Tanzania") (remark "Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma double_chocolate))
 ;Medium Acidity, Medium Bitterness
 (bean (name "Congo") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma blackforest))
-(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smooth_nutty))
+(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smoothnutty))
 (bean (name "Guatemala") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma velvety))
 ;Low Acidity, High Bitterness
 (bean (name "Sulawesi") (remark "Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma almond))
@@ -278,7 +278,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options blackforest smooth_nutty velvety))
+	(modify ?p(question "Let us get more specific?")(options blackforest smoothnutty velvety))
 	(retract ?n)
 )
 
@@ -356,12 +356,12 @@
 	?p <- (nextQuestion(question "Let us get more specific?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
-	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth harsh))
+	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth_yes smooth_no))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_harsh
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" harsh)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_no)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
@@ -371,16 +371,16 @@
 )
 
 (defrule milk_no_acidity_med_smooth
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_yes)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
-	(modify ?p(question "Are you in a hurry?")(options yes no))
+	(modify ?p(question "Are you in a hurry?")(options hurry_yes hurry_no))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_smooth_hurry_yes
-	?n<-(answer_of "Are you in a hurry?" yes)
+	?n<-(answer_of "Are you in a hurry?" hurry_yes)
 	?p <- (nextQuestion(question "Are you in a hurry?"))
 	?k <- (profile(name user))
   	=>
@@ -390,7 +390,7 @@
 )
 
 (defrule milk_no_acidity_med_smooth_hurry_no
-	?n<-(answer_of "Are you in a hurry?" no)
+	?n<-(answer_of "Are you in a hurry?" hurry_no)
 	?p <- (nextQuestion(question "Are you in a hurry?"))
 	?k <- (profile(name user))
   	=>
@@ -404,12 +404,12 @@
 	?p <- (nextQuestion(question "Let us get more specific?"))
     (profile(name user)(acidity 2)(milk 0))
   	=>
-	(modify ?p(question "Coffee Concentration?")(options low medium high))
+	(modify ?p(question "Coffee Concentration?")(options Concentration_low Concentration_medium Concentration_high))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_high_coffee_conc_low
-	?n<-(answer_of "Coffee Concentration?" low)
+	?n<-(answer_of "Coffee Concentration?" Concentration_low)
 	?p <- (nextQuestion(question "Coffee Concentration?"))
 	?k <- (profile(name user))
   	=>
@@ -419,7 +419,7 @@
 )
 
 (defrule milk_no_acidity_high_coffee_conc_med
-	?n<-(answer_of "Coffee Concentration?" medium)
+	?n<-(answer_of "Coffee Concentration?" Concentration_medium)
 	?p <- (nextQuestion(question "Coffee Concentration?"))
 	?k <- (profile(name user))
   	=>
@@ -429,7 +429,7 @@
 )
 
 (defrule milk_no_acidity_high_coffee_conc_high
-	?n<-(answer_of "Coffee Concentration?" high)
+	?n<-(answer_of "Coffee Concentration?" Concentration_high)
 	?p <- (nextQuestion(question "Coffee Concentration?"))
 	?k <- (profile(name user))
   	=>
@@ -443,20 +443,20 @@
 	?p <- (nextQuestion(question "Let us get more specific?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
-	(modify ?p(question "Add chocolate to your coffee?")(options no low high))
+	(modify ?p(question "Add chocolate to your coffee?")(options chocolate_no chocolate_low chocolate_high))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_no
-	?n<-(answer_of "Add chocolate to your coffee?" no)
+	?n<-(answer_of "Add chocolate to your coffee?" chocolate_no)
 	?p <- (nextQuestion(question "Add chocolate to your coffee?"))
   	=>
-	(modify ?p(question "Foam Level?")(options no low high))
+	(modify ?p(question "Foam Level?")(options foam_no foam_low foam_high))
 	(retract ?n)
 )
 
 (defrule milk_low_choc_conc_no_foam_no
-	?n<-(answer_of "Foam Level?" no)
+	?n<-(answer_of "Foam Level?" foam_no)
 	?p <- (nextQuestion(question "Foam Level?"))
 	?k <- (profile(name user))
   	=>
@@ -466,7 +466,7 @@
 )
 
 (defrule milk_low_choc_conc_no_foam_low
-	?n<-(answer_of "Foam Level?" low)
+	?n<-(answer_of "Foam Level?" foam_low)
 	?p <- (nextQuestion(question "Foam Level?"))
 	?k <- (profile(name user))
   	=>
@@ -476,7 +476,7 @@
 )
 
 (defrule milk_low_choc_conc_no_foam_high
-	?n<-(answer_of "Foam Level?" high)
+	?n<-(answer_of "Foam Level?" foam_high)
 	?p <- (nextQuestion(question "Foam Level?"))
 	?k <- (profile(name user))
   	=>
@@ -486,7 +486,7 @@
 )
 
 (defrule milk_low_choc_conc_low
-	?n<-(answer_of "Add chocolate to your coffee?" low)
+	?n<-(answer_of "Add chocolate to your coffee?" chocolate_low)
 	?p <- (nextQuestion(question "Add chocolate to your coffee?"))
 	?k <- (profile(name user))
   	=>
@@ -497,7 +497,7 @@
 
 
 (defrule milk_low_choc_conc_high
-	?n<-(answer_of "Add chocolate to your coffee?" high)
+	?n<-(answer_of "Add chocolate to your coffee?" chocolate_high)
 	?p <- (nextQuestion(question "Add chocolate to your coffee?"))
 	?k <- (profile(name user))
   	=>
