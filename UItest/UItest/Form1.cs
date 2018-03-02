@@ -148,7 +148,12 @@ namespace QuestionUI
             me.Image = ImageLibrary[Convert.ToInt16(me.Tag)];
 
             Label optionName = new Label();
-            optionName.Text = InternalItems[Convert.ToInt16(me.Tag)].ToUpper();
+            string strOptionName = InternalItems[Convert.ToInt16(me.Tag)].ToUpper().Replace('-', ' ');
+            int indexOfSeperator = strOptionName.IndexOf('_');
+            if (indexOfSeperator != -1)
+                optionName.Text = strOptionName.Substring(strOptionName.IndexOf('_') + 1, strOptionName.Length - (strOptionName.IndexOf('_') + 1));
+            else
+                optionName.Text = strOptionName;
             optionName.Size = new Size(me.Width, 100);
             optionName.Location = new Point(0, 668);
             optionName.Parent = me;
