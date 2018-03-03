@@ -366,7 +366,7 @@
 	?k <- (profile(name user))
   	=>
     (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
-    (modify ?k(brew_recommanded "Drip Coffees")(brew_remark "Made by dripping boiling water over ground coffee, which is ground more coarsely than espresso coffee. The water filters through the coffee and falls into a pot. This process is slower than the espresso process, and hot water is in contact with the ground coffee for much longer. "))
+    (modify ?k(brew_recommanded "Drip Coffee")(brew_remark "Made by dripping boiling water over ground coffee, which is ground more coarsely than espresso coffee. The water filters through the coffee and falls into a pot. This process is slower than the espresso process, and hot water is in contact with the ground coffee for much longer. "))
 	(retract ?n)
 )
 
@@ -512,7 +512,7 @@
 	?k <- (profile(name user))
 	(profile(name user)(milk 2)(acidity 0))
   	=>
-    (modify ?k(brew_recommanded "Caffee_Latte")(brew_remark "Cafe latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam."))
+    (modify ?k(brew_recommanded "Caffee Latte")(brew_remark "Cafe latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam."))
     (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
 	(retract ?n)
 )
