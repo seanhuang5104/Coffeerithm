@@ -17,9 +17,21 @@ namespace QuestionUI
         public Result(List<String> item,String path)
         {
             InitializeComponent();
-            bean_name.Text = item[0];
+            string beanName = item[0].ToUpper().Replace('-', ' ');
+            int seperatorIndex = beanName.IndexOf('_');
+            if (seperatorIndex != -1)
+                bean_name.Text = beanName.Substring(beanName.IndexOf('_') + 1, beanName.Length - (beanName.IndexOf('_') + 1));
+            else
+                bean_name.Text = beanName;
             bean_remark.Text = item[1];
-            brew_type.Text = item[2];
+            string brewRemark = item[2].ToUpper().Replace('-', ' ');
+
+            seperatorIndex = brewRemark.IndexOf('_');
+            if (seperatorIndex != -1)
+                brew_type.Text = brewRemark.Substring(brewRemark.IndexOf('_') + 1, brewRemark.Length - (brewRemark.IndexOf('_') + 1));
+            else
+                brew_type.Text = brewRemark;
+
             brew_remark.Text = item[3];
             if (!File.Exists(path + "\\" + item[4] + ".jpg"))
             {
