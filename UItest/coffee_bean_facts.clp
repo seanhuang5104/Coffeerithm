@@ -375,13 +375,13 @@
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
-	(modify ?p(question "Are you in a hurry?")(options hurry_yes hurry_no))
+	(modify ?p(question "Can you wait?")(options wait_yes wait_no))
 	(retract ?n)
 )
 
-(defrule milk_no_acidity_med_smooth_hurry_yes
-	?n<-(answer_of "Are you in a hurry?" hurry_yes)
-	?p <- (nextQuestion(question "Are you in a hurry?"))
+(defrule milk_no_acidity_med_smooth_wait_no
+	?n<-(answer_of "Can you wait?" wait_no)
+	?p <- (nextQuestion(question "Can you wait?"))
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "French Press")(brew_remark "This machine is used by placing the coffee grounds in the bottom of the container, steeping them with hot water, and then pressing down on the plunger slowly. The plunger catches the grounds of coffee so that they do not end up in the final cup. It retains more of the natural oils from the coffee grounds."))
@@ -389,9 +389,9 @@
 	(retract ?n)
 )
 
-(defrule milk_no_acidity_med_smooth_hurry_no
-	?n<-(answer_of "Are you in a hurry?" hurry_no)
-	?p <- (nextQuestion(question "Are you in a hurry?"))
+(defrule milk_no_acidity_med_smooth_wait_yes
+	?n<-(answer_of "Can you wait?" wait_yes)
+	?p <- (nextQuestion(question "Can you wait?"))
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "Chemex")(brew_remark "Due to the way that the water sits in the filter together with the ground coffee beans, we get the added benefit here of immersion, where the grinds and the hot water mix together to give your coffee that smooth added flavour. Chemex brewing takes a much longer time compared to other methods."))
