@@ -375,13 +375,13 @@
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
-	(modify ?p(question "Can you wait?")(options wait_yes wait_no))
+	(modify ?p(question "How would you like your coffee?")(options thin full_body))
 	(retract ?n)
 )
 
-(defrule milk_no_acidity_med_smooth_wait_no
-	?n<-(answer_of "Can you wait?" wait_no)
-	?p <- (nextQuestion(question "Can you wait?"))
+(defrule milk_no_acidity_med_smooth_body_full
+	?n<-(answer_of "How would you like your coffee?" full_body)
+	?p <- (nextQuestion(question "How would you like your coffee?"))
 	?k <- (profile(name user))
   	=>
     (modify ?k(brew_recommanded "French Press")(brew_remark "This machine is used by placing the coffee grounds in the bottom of the container, steeping them with hot water, and then pressing down on the plunger slowly. The plunger catches the grounds of coffee so that they do not end up in the final cup. It retains more of the natural oils from the coffee grounds."))
@@ -390,11 +390,11 @@
 )
 
 (defrule milk_no_acidity_med_smooth_wait_yes
-	?n<-(answer_of "Can you wait?" wait_yes)
-	?p <- (nextQuestion(question "Can you wait?"))
+	?n<-(answer_of "How would you like your coffee?" thin)
+	?p <- (nextQuestion(question "How would you like your coffee?"))
 	?k <- (profile(name user))
   	=>
-    (modify ?k(brew_recommanded "Chemex")(brew_remark "Due to the way that the water sits in the filter together with the ground coffee beans, we get the added benefit here of immersion, where the grinds and the hot water mix together to give your coffee that smooth added flavour. Chemex brewing takes a much longer time compared to other methods."))
+    (modify ?k(brew_recommanded "Chemex")(brew_remark "Due to the way that the water sits in the filter together with the ground coffee beans, we get the added benefit here of immersion, where the grinds and the hot water mix together to give your coffee that smooth added flavour."))
     (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
 	(retract ?n)
 )
