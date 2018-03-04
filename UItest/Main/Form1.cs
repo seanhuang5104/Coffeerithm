@@ -47,7 +47,7 @@ namespace Main
             //fbd.Description = "Select folder for all pictures";
             //if(fbd.ShowDialog(this) == DialogResult.Cancel)
             //    return;
-            picPath = path+ "\\Image\\";
+            picPath = path+ "\\Images\\";
         }
         /// <summary>
         /// Start recommandation
