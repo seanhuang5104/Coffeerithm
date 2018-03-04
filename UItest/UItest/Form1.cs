@@ -67,12 +67,13 @@ namespace QuestionUI
             lblTrans.Top = 0;
             lblTrans.Left = 0;
             lblTrans.Text = question;
-            lblTrans.Font = new Font("Consolas", 30);
+            lblTrans.Font = new Font("Comic Sans MS", 30);
             this.Controls.Add(lblTrans);
             lblTrans.Visible = true;
             lblTrans.BringToFront();
             lblTrans.TextAlign = ContentAlignment.MiddleCenter;
-            lblTrans.BackColor = Color.RosyBrown;
+            lblTrans.BackColor = Color.FromArgb(64, 64, 64);
+            lblTrans.ForeColor = Color.FromArgb(225,226,210);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,19 +83,20 @@ namespace QuestionUI
             {
                 Form test = new Form();
                 test.Size = this.Size;
-                test.BackColor = Color.Wheat;
+                test.Font = new Font("Comic Sans MS", 20);
+                test.BackColor = Color.FromArgb(64,64,64);
                 test.FormBorderStyle = FormBorderStyle.None;
                 test.WindowState = FormWindowState.Maximized;
 
                 test.Opacity = 0;
-                //test.TopMost = true;
+                test.TopMost = true;
                 test.Show();
                 for (int i = 0; i < 50; i++)
                  {
                      test.Opacity += 0.02;
                      Thread.Sleep(7);
                  }
-                Thread.Sleep(300);
+                Thread.Sleep(500);
                 for (int i = 0; i < 50; i++)
                 {
                     test.Opacity -= 0.02;
@@ -103,7 +105,7 @@ namespace QuestionUI
                 test.Dispose();
             });
             t.Start();
-            Thread.Sleep(650);
+            Thread.Sleep(400);
             Button SelectedBtn = (Button)sender;
             this.Tag = "\"" + Question + "\" " + InternalItems[Convert.ToInt16(SelectedBtn.Tag)];
             this.DialogResult = DialogResult.OK;      
@@ -157,8 +159,9 @@ namespace QuestionUI
             optionName.Size = new Size(me.Width, 100);
             optionName.Location = new Point(0, 668);
             optionName.Parent = me;
-            optionName.BackColor = Color.RosyBrown;
-            optionName.Font = new Font("consolas", 20);
+            optionName.BackColor = Color.FromArgb(64, 64, 64);
+            optionName.ForeColor = Color.FromArgb(225,226,210);
+            optionName.Font = new Font("Comic Sans MS", 20);
             optionName.TextAlign = ContentAlignment.MiddleCenter;
             optionName.BringToFront();
             optionName.Show();
