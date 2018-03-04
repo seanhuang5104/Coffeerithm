@@ -23,31 +23,31 @@ namespace Main
         public Form1()
         {
             InitializeComponent();
-            
+            button2.ForeColor = Color.FromArgb(225,226,210);
+            button2.BackColor = Color.FromArgb(64,64,64);
             this.WindowState = FormWindowState.Maximized;
             clips = new CLIPSNET.Environment();
 
             //get CLP file names and load in CLIPS
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.InitialDirectory = System.IO.Path.Combine(Application.StartupPath);
-
-            ofd.Filter = "CLP Files (*.clp)|*.CLP";
-            ofd.Title = "Choose clp file to open";
-            ofd.RestoreDirectory = true;
-            if (ofd.ShowDialog(this) == DialogResult.Cancel)
-                return;
-            string[] clpFiles = ofd.FileNames;
-            for (int i = 0; i < clpFiles.Length; i++)
-            {
-                clips.Load(clpFiles[0].ToString());
-            }
+            //OpenFileDialog ofd = new OpenFileDialog();
+            string path = System.IO.Path.Combine(Application.StartupPath);
+            //ofd.Filter = "CLP Files (*.clp)|*.CLP";
+            //ofd.Title = "Choose clp file to open";
+            //ofd.RestoreDirectory = true;
+            //if (ofd.ShowDialog(this) == DialogResult.Cancel)
+            //    return;
+            //string[] clpFiles = ofd.FileNames;
+            //for (int i = 0; i < clpFiles.Length; i++)
+            //{
+                clips.Load(path+ "\\coffee_bean_facts.clp");
+            //}
             //Get directory for pictures
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = System.IO.Path.Combine(Application.StartupPath);
-            fbd.Description = "Select folder for all pictures";
-            if(fbd.ShowDialog(this) == DialogResult.Cancel)
-                return;
-            picPath = fbd.SelectedPath+ "\\";
+            //FolderBrowserDialog fbd = new FolderBrowserDialog();
+            //fbd.SelectedPath = System.IO.Path.Combine(Application.StartupPath);
+            //fbd.Description = "Select folder for all pictures";
+            //if(fbd.ShowDialog(this) == DialogResult.Cancel)
+            //    return;
+            picPath = path+ "\\Image\\";
         }
         /// <summary>
         /// Start recommandation
@@ -62,18 +62,23 @@ namespace Main
             question = "Amount of milk?";
             factsAssert.Clear();
             options = new List<string>() { "pure", "little", "milky" };
-            
+
+            List<QuestionUI.UI> questions = new List<QuestionUI.UI>();
             while (!questionCompleted)
             {
                 QuestionUI.UI uitest = new QuestionUI.UI(options, question, picPath);
+                questions.Add(uitest);
                 if (DialogResult.OK == uitest.ShowDialog())
                 {
                     factsAssert.Add(uitest.Tag.ToString());
                     ProcessRules();
                 };
-                uitest.Dispose();
+                //uitest.Dispose();
             }
-
+            for(int i= questions.Count-1;i>=0;i--)
+            {
+                questions[i].Dispose();
+            }
             QuestionUI.Result recommend = new QuestionUI.Result(options, picPath);
             if (DialogResult.OK == recommend.ShowDialog())
             {
