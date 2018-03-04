@@ -37,7 +37,6 @@ namespace QuestionUI
         //Path to find the pictures
         private String PicPath = "",Question="";
         //TransparentLabel lblTrans = new TransparentLabel();
-        Label lblTrans = new Label();
         //store option images
         private List<Image> ImageLibrary = new List<Image>();
         private List<Image> BlurImageLibrary = new List<Image>();
@@ -62,18 +61,15 @@ namespace QuestionUI
 
             MakeButtons(Items.Count);
            
-            lblTrans.Height = 100;
-            lblTrans.Width = 1024;
-            lblTrans.Top = 0;
-            lblTrans.Left = 0;
-            lblTrans.Text = question;
-            lblTrans.Font = new Font("Comic Sans MS", 30);
-            this.Controls.Add(lblTrans);
-            lblTrans.Visible = true;
-            lblTrans.BringToFront();
-            lblTrans.TextAlign = ContentAlignment.MiddleCenter;
-            lblTrans.BackColor = Color.FromArgb(64, 64, 64);
-            lblTrans.ForeColor = Color.FromArgb(225,226,210);
+            lbQuestion.Top = 0;
+            lbQuestion.Left = 0;
+            lbQuestion.Text = question;
+            
+            this.Controls.Add(lbQuestion);
+            lbQuestion.BringToFront();
+
+            lbQuestion.BackColor = Color.FromArgb(64, 64, 64);
+            lbQuestion.ForeColor = Color.FromArgb(225,226,210);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,7 +101,7 @@ namespace QuestionUI
                 test.Dispose();
             });
             t.Start();
-            Thread.Sleep(400);
+            Thread.Sleep(600);
             Button SelectedBtn = (Button)sender;
             this.Tag = "\"" + Question + "\" " + InternalItems[Convert.ToInt16(SelectedBtn.Tag)];
             this.DialogResult = DialogResult.OK;      

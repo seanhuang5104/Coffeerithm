@@ -28,7 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UI));
+            this.lbQuestion = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lbQuestion
+            // 
+            this.lbQuestion.Font = new System.Drawing.Font("Comic Sans MS", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuestion.Image = ((System.Drawing.Image)(resources.GetObject("lbQuestion.Image")));
+            this.lbQuestion.Location = new System.Drawing.Point(-1, 0);
+            this.lbQuestion.Name = "lbQuestion";
+            this.lbQuestion.Size = new System.Drawing.Size(1024, 100);
+            this.lbQuestion.TabIndex = 0;
+            this.lbQuestion.Text = "label1";
+            this.lbQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UI
             // 
@@ -36,6 +49,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.ControlBox = false;
+            this.Controls.Add(this.lbQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UI";
             this.Text = "Form1";
@@ -44,6 +58,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbQuestion;
     }
 }
 
