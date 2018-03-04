@@ -13,3 +13,14 @@ C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.G
 C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.CoreCompileInputs.cache
 C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.exe
 C:\Users\XuYa\Source\Repos\Coffeerithm\UItest\Main\obj\x86\Release\Main.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x86\Properties\NotFound.png
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x86\Main.exe.config
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x86\Main.exe
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x86\Main.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.csprojResolveAssemblyReference.cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.Form1.resources
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.Properties.Resources.resources
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.GenerateResource.Cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.csproj.CoreCompileInputs.cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.exe
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x86\Release\Main.pdb

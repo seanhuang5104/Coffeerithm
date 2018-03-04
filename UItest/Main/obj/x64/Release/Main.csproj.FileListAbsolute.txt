@@ -1,0 +1,11 @@
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x64\Properties\NotFound.png
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x64\Main.exe.config
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x64\Main.exe
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Release\x64\Main.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.csprojResolveAssemblyReference.cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.Form1.resources
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.Properties.Resources.resources
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.csproj.GenerateResource.Cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.csproj.CoreCompileInputs.cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.exe
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Main.pdb
