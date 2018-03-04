@@ -365,7 +365,7 @@
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
-    (modify ?p(question "How do you feel today?")(options happy upset anxious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
     (modify ?k(brew_recommanded "Drip Coffee")(brew_remark "Made by dripping boiling water over ground coffee, which is ground more coarsely than espresso coffee. The water filters through the coffee and falls into a pot. This process is slower than the espresso process, and hot water is in contact with the ground coffee for much longer. "))
 	(retract ?n)
 )
