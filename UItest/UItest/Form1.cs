@@ -66,7 +66,7 @@ namespace QuestionUI
             lbQuestion.Text = question;
             
             this.Controls.Add(lbQuestion);
-            //lbQuestion.BringToFront();
+            lbQuestion.BringToFront();
 
             lbQuestion.BackColor = Color.FromArgb(64, 64, 64);
             lbQuestion.ForeColor = Color.FromArgb(225,226,210);
