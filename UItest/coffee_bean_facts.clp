@@ -59,7 +59,7 @@
 (bean (name "Tanzania") (remark "Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma double-chocolate))
 ;Medium Acidity, Medium Bitterness
 (bean (name "Congo") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma blackforest))
-(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smoothnutty))
+(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma nutty))
 (bean (name "Guatemala") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma velvety))
 ;Low Acidity, High Bitterness
 (bean (name "Sulawesi") (remark "Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma almond))
@@ -356,12 +356,12 @@
 	?p <- (nextQuestion(question "Let us get more specific?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
-	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth_yes smooth_no))
+	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth harsh))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_harsh
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_no)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" harsh)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
@@ -371,7 +371,7 @@
 )
 
 (defrule milk_no_acidity_med_smooth
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_yes)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
