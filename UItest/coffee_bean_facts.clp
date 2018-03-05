@@ -78,7 +78,7 @@
 ;Low Acidity, High Bitterness
 (bean (name "Panama") (remark "Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma honey))
 (bean (name "Cuba") (remark "Medium High Roasted, Full Body") (acidity 0) (category sweetness) (aroma caramel))
-(bean (name "Peru") (remark "Medium Dark Roasted, Very Thin Body") (acidity 0) (category sweetness) (aroma maple_syrup))
+(bean (name "Peru") (remark "Medium Dark Roasted, Very Thin Body") (acidity 0) (category sweetness) (aroma maple-syrup))
 
 ;Special*
 ;High Acidity, Low Bitterness
@@ -250,7 +250,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options honey caramal maple_syrup))
+	(modify ?p(question "Let us get more specific?")(options honey caramal maple-syrup))
 	(retract ?n)
 )
 

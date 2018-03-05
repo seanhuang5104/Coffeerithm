@@ -7,7 +7,6 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\Properties\Not
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\Main.exe.config
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\Main.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\Main.pdb
-C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\CLIPSCLRWrapper.dll
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\UItest.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\UItest.pdb
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\bin\Debug\UItest.exe.config

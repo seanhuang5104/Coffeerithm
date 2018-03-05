@@ -8,6 +8,7 @@ using System.Drawing;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.ComponentModel;
 
 using System.IO;
 using System.Reflection;
@@ -33,9 +34,9 @@ namespace QuestionUI
         /// EX: list contains "Apple", then program will look for Apple.jpg and CApple.jpg for the option,CApple.jpg will be shown when mouse hover on the option. 
         /// </summary>
         private List<String> InternalItems;
-
+        BackgroundWorker bg = new BackgroundWorker();
         //Path to find the pictures
-        private String PicPath = "",Question="";
+        private String PicPath = "",Question="",answer="";
         //TransparentLabel lblTrans = new TransparentLabel();
         //store option images
         private List<Image> ImageLibrary = new List<Image>();
@@ -64,46 +65,57 @@ namespace QuestionUI
             lbQuestion.Top = 0;
             lbQuestion.Left = 0;
             lbQuestion.Text = question;
-            
             this.Controls.Add(lbQuestion);
             lbQuestion.BringToFront();
-
             lbQuestion.BackColor = Color.FromArgb(64, 64, 64);
             lbQuestion.ForeColor = Color.FromArgb(225,226,210);
+            
+            bg.DoWork += Bg_DoWork;
+            bg.ProgressChanged += Bg_ProgressChanged;
+            bg.WorkerReportsProgress = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Thread t = new Thread(() => 
-            {
-                Form test = new Form();
-                test.Size = this.Size;
-                test.BackColor = Color.FromArgb(64,64,64);
-                test.FormBorderStyle = FormBorderStyle.None;
-                test.WindowState = FormWindowState.Maximized;
-
-                test.Opacity = 0;
-                test.TopMost = true;
-                test.Show();
-                for (int i = 0; i < 50; i++)
-                 {
-                     test.Opacity += 0.02;
-                     Thread.Sleep(7);
-                 }
-                Thread.Sleep(700);
-                for (int i = 0; i < 50; i++)
-                {
-                    test.Opacity -= 0.02;
-                    Thread.Sleep(7);
-                }
-                test.Dispose();
-            });
-            t.Start();
-            Thread.Sleep(800);
             Button SelectedBtn = (Button)sender;
-            this.Tag = "\"" + Question + "\" " + InternalItems[Convert.ToInt16(SelectedBtn.Tag)];
-            this.DialogResult = DialogResult.OK;      
+            answer = SelectedBtn.Tag.ToString();
+            bg.RunWorkerAsync();
+        }
+
+        static void Bg_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = (BackgroundWorker)sender;
+            
+            Form test = new Form();
+            test.Size = new Size(1024, 768);
+            test.BackColor = Color.FromArgb(64, 64, 64);
+            test.FormBorderStyle = FormBorderStyle.None;
+            test.WindowState = FormWindowState.Maximized;
+
+            test.Opacity = 0;
+            test.TopMost = true;
+            test.Show();
+            for (int i = 0; i < 50; i++)
+            {
+                test.Opacity += 0.02;
+                Thread.Sleep(5);
+            }
+            
+            worker.ReportProgress(1);
+            Thread.Sleep(550);
+
+            for (int i = 0; i < 50; i++)
+            {
+                test.Opacity -= 0.02;
+                Thread.Sleep(5);
+            }
+            test.Dispose();
+        }
+
+        private void Bg_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.Tag = "\"" + Question + "\" " + InternalItems[Convert.ToInt16(answer)];
+            this.DialogResult = DialogResult.OK;
         }
 
         private void MakeButtons(int BtnCount)
@@ -274,36 +286,4 @@ namespace QuestionUI
             return _img2;
         }
     }
-    /*
-    public class TransparentLabel : Control
-    {
-        public TransparentLabel()
-        {
-            TabStop = false;
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x20;
-                return cp;
-            }
-        }
-
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            // do nothing
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            using (SolidBrush brush = new SolidBrush(ForeColor))
-            {
-                e.Graphics.DrawString(Text, Font, brush, -1, 0);
-            }
-        }
-    }
-    */
 }

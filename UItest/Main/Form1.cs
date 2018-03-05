@@ -63,22 +63,16 @@ namespace Main
             factsAssert.Clear();
             options = new List<string>() { "pure", "little", "milky" };
 
-            List<QuestionUI.UI> questions = new List<QuestionUI.UI>();
             while (!questionCompleted)
             {
                 QuestionUI.UI uitest = new QuestionUI.UI(options, question, picPath);
-                questions.Add(uitest);
                 if (DialogResult.OK == uitest.ShowDialog())
                 {
                     factsAssert.Add(uitest.Tag.ToString());
                     ProcessRules();
                 };
-                //uitest.Dispose();
             }
-            for(int i= questions.Count-1;i>=0;i--)
-            {
-                questions[i].Dispose();
-            }
+
             QuestionUI.Result recommend = new QuestionUI.Result(options, picPath);
             if (DialogResult.OK == recommend.ShowDialog())
             {
