@@ -130,7 +130,7 @@
 
   	=>
 
-	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
+	(modify ?p(question "Let us get more specific aroma?")(options winey woody earthy))
 
 	(modify ?k(milk 1)(acidity 0))
 
@@ -150,7 +150,7 @@
 
   	=>
 
-	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
+	(modify ?p(question "Let us get more specific aroma?")(options winey woody earthy))
 
 	(modify ?k(milk 2)(acidity 0))
 
@@ -232,7 +232,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options tangerine peach black_cherry))
+	(modify ?p(question "Let us get more specific aroma?")(options tangerine peach black_cherry))
 	(retract ?n)
 )
 
@@ -241,7 +241,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options almond hazelnut walnut))
+	(modify ?p(question "Let us get more specific aroma?")(options almond hazelnut walnut))
 	(retract ?n)
 )
 
@@ -250,7 +250,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options honey caramal maple-syrup))
+	(modify ?p(question "Let us get more specific aroma?")(options honey caramal maple-syrup))
 	(retract ?n)
 )
 
@@ -259,7 +259,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific?")(options winey woody earthy))
+	(modify ?p(question "Let us get more specific aroma?")(options winey woody earthy))
 	(retract ?n)
 )
 
@@ -269,7 +269,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options raisin prune cherry))
+	(modify ?p(question "Let us get more specific aroma?")(options raisin prune cherry))
 	(retract ?n)
 )
 
@@ -278,7 +278,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options blackforest smoothnutty velvety))
+	(modify ?p(question "Let us get more specific aroma?")(options blackforest smoothnutty velvety))
 	(retract ?n)
 )
 
@@ -287,7 +287,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options orange lemon lime))
+	(modify ?p(question "Let us get more specific aroma?")(options orange lemon lime))
 	(retract ?n)
 )
 
@@ -296,7 +296,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 1))
   	=>
-	(modify ?p(question "Let us get more specific?")(options winey mellow jasmine))
+	(modify ?p(question "Let us get more specific aroma?")(options winey mellow jasmine))
 	(retract ?n)
 )
 
@@ -306,7 +306,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options blueberry strawberry blackberry))
+	(modify ?p(question "Let us get more specific aroma?")(options blueberry strawberry blackberry))
 	(retract ?n)
 )
 
@@ -315,7 +315,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options chocolate dark-chocolate double-chocolate))
+	(modify ?p(question "Let us get more specific aroma?")(options chocolate dark-chocolate double-chocolate))
 	(retract ?n)
 )
 
@@ -324,7 +324,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options buttery vanilla cola))
+	(modify ?p(question "Let us get more specific aroma?")(options buttery vanilla cola))
 	(retract ?n)
 )
 
@@ -333,7 +333,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific?")(options smoky brown_roast rubbery))
+	(modify ?p(question "Let us get more specific aroma?")(options smoky brown_roast rubbery))
 	(retract ?n)
 )
 
@@ -342,26 +342,26 @@
 ;;**************
 (defrule milk_no_acidity_low
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Let us get more specific?"))
+	?p <- (nextQuestion(question "Let us get more specific aroma?"))
 	?k <- (profile(name user))
     	(profile(name user)(acidity 0)(milk 0))
   	=>
-    (modify ?k(brew_recommanded "Cold-Brew")(brew_remark "Coffee that’s brewed with room temperature or cold water over a 12 to 24-hour brew time. Because it’s made with colder water, it’s generally a bit mellower and tastes more rounded out with lesser acidity"))
+    (modify ?k(brew_recommanded "Cold-Brew")(brew_remark "Coffee that's brewed with room temperature or cold water over a 12 to 24-hour brew time. Because it's made with colder water, it's generally a bit mellower and tastes more rounded out with lesser acidity"))
     (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Let us get more specific?"))
+	?p <- (nextQuestion(question "Let us get more specific aroma?"))
     (profile(name user)(acidity 1)(milk 0))
   	=>
-	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth_yes smooth_no))
+	(modify ?p(question "Do you prefer smooth or harsh coffees?")(options smooth_smooth smooth_harsh))
 	(retract ?n)
 )
 
 (defrule milk_no_acidity_med_harsh
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_no)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_harsh)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
@@ -371,7 +371,7 @@
 )
 
 (defrule milk_no_acidity_med_smooth
-	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_yes)
+	?n<-(answer_of "Do you prefer smooth or harsh coffees?" smooth_smooth)
 	?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
 	?k <- (profile(name user))
   	=>
@@ -401,7 +401,7 @@
 
 (defrule milk_no_acidity_high
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Let us get more specific?"))
+	?p <- (nextQuestion(question "Let us get more specific aroma?"))
     (profile(name user)(acidity 2)(milk 0))
   	=>
 	(modify ?p(question "Coffee Concentration?")(options Concentration_low Concentration_medium Concentration_high))
@@ -440,7 +440,7 @@
 
 (defrule milk_low
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Let us get more specific?"))
+	?p <- (nextQuestion(question "Let us get more specific aroma?"))
 	(profile(name user)(milk 1)(acidity 0))
   	=>
 	(modify ?p(question "Add chocolate to your coffee?")(options chocolate_no chocolate_low chocolate_high))
@@ -508,7 +508,7 @@
 
 (defrule milk_high
 	?n<-(answer_of "brewing_start")
-	?p <- (nextQuestion(question "Let us get more specific?"))
+	?p <- (nextQuestion(question "Let us get more specific aroma?"))
 	?k <- (profile(name user))
 	(profile(name user)(milk 2)(acidity 0))
   	=>
@@ -564,7 +564,7 @@
 ;;********************************************
 (defrule profile_update
 	?k <- (profile(name user))
-	?n <- (answer_of "Let us get more specific?" ?aroma)
+	?n <- (answer_of "Let us get more specific aroma?" ?aroma)
 	=>
 	(modify ?k(aroma ?aroma))
 	(retract ?n)

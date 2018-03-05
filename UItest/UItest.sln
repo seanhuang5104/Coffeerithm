@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionUI", "UItest\QuestionUI.csproj", "{DC41EC8A-5B33-4992-8E8A-8CDE8BC40EF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main.csproj", "{02C4F4D9-2D97-4D41-B858-20022FEDBBF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffeerithm", "Main\Coffeerithm.csproj", "{02C4F4D9-2D97-4D41-B858-20022FEDBBF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
