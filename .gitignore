@@ -6,3 +6,7 @@
 /UItest/.vs/UItest/v15/.suo
 /UItest/.vs/UItest/v15
 /UItest/.vs/**
+*.pdb
+*.pdb
+*.pdb
+UItest/UItest/obj/Release/UItest.pdb

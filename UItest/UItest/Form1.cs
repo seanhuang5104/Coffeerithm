@@ -66,7 +66,7 @@ namespace QuestionUI
             lbQuestion.Text = question;
             
             this.Controls.Add(lbQuestion);
-            lbQuestion.BringToFront();
+            //lbQuestion.BringToFront();
 
             lbQuestion.BackColor = Color.FromArgb(64, 64, 64);
             lbQuestion.ForeColor = Color.FromArgb(225,226,210);
@@ -79,7 +79,6 @@ namespace QuestionUI
             {
                 Form test = new Form();
                 test.Size = this.Size;
-                test.Font = new Font("Comic Sans MS", 20);
                 test.BackColor = Color.FromArgb(64,64,64);
                 test.FormBorderStyle = FormBorderStyle.None;
                 test.WindowState = FormWindowState.Maximized;
@@ -92,7 +91,7 @@ namespace QuestionUI
                      test.Opacity += 0.02;
                      Thread.Sleep(7);
                  }
-                Thread.Sleep(500);
+                Thread.Sleep(700);
                 for (int i = 0; i < 50; i++)
                 {
                     test.Opacity -= 0.02;
@@ -101,7 +100,7 @@ namespace QuestionUI
                 test.Dispose();
             });
             t.Start();
-            Thread.Sleep(600);
+            Thread.Sleep(800);
             Button SelectedBtn = (Button)sender;
             this.Tag = "\"" + Question + "\" " + InternalItems[Convert.ToInt16(SelectedBtn.Tag)];
             this.DialogResult = DialogResult.OK;      
