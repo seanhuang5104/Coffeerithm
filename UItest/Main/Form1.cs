@@ -3,9 +3,6 @@ using System.Collections.Generic;
 //using System.ComponentModel;
 //using System.Data;
 using System.Drawing;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
 using System.Windows.Forms;
 //using System.Threading;
 using CLIPSNET;
@@ -76,7 +73,6 @@ namespace Main
             QuestionUI.Result recommend = new QuestionUI.Result(options, picPath);
             if (DialogResult.OK == recommend.ShowDialog())
             {
-                recommend.Dispose();
                 questionCompleted = false;
             };
             

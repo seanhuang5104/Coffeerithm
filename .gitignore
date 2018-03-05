@@ -10,3 +10,6 @@
 *.pdb
 *.pdb
 UItest/UItest/obj/Release/UItest.pdb
+*.ide
+*.ide-shm
+*.ide-wal

@@ -346,7 +346,7 @@
 	?k <- (profile(name user))
     	(profile(name user)(acidity 0)(milk 0))
   	=>
-    (modify ?k(brew_recommanded "Cold Brew")(brew_remark "Coffee that’s brewed with room temperature or cold water over a 12 to 24-hour brew time. Because it’s made with colder water, it’s generally a bit mellower and tastes more rounded out with lesser acidity"))
+    (modify ?k(brew_recommanded "Cold-Brew")(brew_remark "Coffee that’s brewed with room temperature or cold water over a 12 to 24-hour brew time. Because it’s made with colder water, it’s generally a bit mellower and tastes more rounded out with lesser acidity"))
     (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
 	(retract ?n)
 )

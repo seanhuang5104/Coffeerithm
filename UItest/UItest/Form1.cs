@@ -1,21 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Data;
 using System.Drawing;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.ComponentModel;
-
 using System.IO;
 using System.Reflection;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
-using System.Drawing.Text;
+
 using System.Linq;
 
 namespace QuestionUI
@@ -37,6 +29,7 @@ namespace QuestionUI
         BackgroundWorker bg = new BackgroundWorker();
         //Path to find the pictures
         private String PicPath = "",Question="",answer="";
+        bool triggered = false;
         //TransparentLabel lblTrans = new TransparentLabel();
         //store option images
         private List<Image> ImageLibrary = new List<Image>();
@@ -65,11 +58,11 @@ namespace QuestionUI
             lbQuestion.Top = 0;
             lbQuestion.Left = 0;
             lbQuestion.Text = question;
-            this.Controls.Add(lbQuestion);
-            lbQuestion.BringToFront();
             lbQuestion.BackColor = Color.FromArgb(64, 64, 64);
             lbQuestion.ForeColor = Color.FromArgb(225,226,210);
-            
+            this.Controls.Add(lbQuestion);
+            lbQuestion.BringToFront();
+
             bg.DoWork += Bg_DoWork;
             bg.ProgressChanged += Bg_ProgressChanged;
             bg.WorkerReportsProgress = true;
@@ -77,6 +70,9 @@ namespace QuestionUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (triggered)
+                return;
+            triggered = true;
             Button SelectedBtn = (Button)sender;
             answer = SelectedBtn.Tag.ToString();
             bg.RunWorkerAsync();
@@ -95,21 +91,21 @@ namespace QuestionUI
             test.Opacity = 0;
             test.TopMost = true;
             test.Show();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
-                test.Opacity += 0.02;
-                Thread.Sleep(5);
+                test.Opacity += 0.1;
+                Thread.Sleep(20);
             }
             
             worker.ReportProgress(1);
             Thread.Sleep(550);
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
-                test.Opacity -= 0.02;
+                test.Opacity -= 0.1;
                 Thread.Sleep(5);
             }
-            test.Dispose();
+            test.Close();
         }
 
         private void Bg_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -176,7 +172,6 @@ namespace QuestionUI
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            
                 Button me = (Button)sender;
                 Label childLabel = (Label)me.GetChildAtPoint(new Point(0, 680));
                 if(childLabel != null)
