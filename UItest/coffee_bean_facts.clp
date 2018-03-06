@@ -130,7 +130,7 @@
 
   	=>
 
-	(modify ?p(question "Let us get more specific aroma?")(options winey woody earthy))
+	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
 
 	(modify ?k(milk 1)(acidity 0))
 
@@ -150,7 +150,7 @@
 
   	=>
 
-	(modify ?p(question "Let us get more specific aroma?")(options winey woody earthy))
+	(modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
 
 	(modify ?k(milk 2)(acidity 0))
 
@@ -570,8 +570,6 @@
 	(retract ?n)
 	(assert (answer_of "brewing_start"))
 )
-
-;(load "C:\\Users\\sean_\\VSprojects\\UItest\\coffee_bean_facts.clp")
 
 ;;********************************************
 ;;* BEAN_recommandation_rules                *

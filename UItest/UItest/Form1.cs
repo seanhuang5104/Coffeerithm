@@ -120,8 +120,8 @@ namespace QuestionUI
             for (int i = 0; i < BtnCount; i++)
             {
                 //add image to library ,using index in tag to trace.
-                ImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath +"C"+ InternalItems[i] + ".jpg", ButtonWidth, 768));
-                BlurImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + InternalItems[i] + ".jpg", ButtonWidth, 768));
+                ImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + InternalItems[i] + ".jpg", ButtonWidth, 768));
+                BlurImageLibrary.Add(Imager.PerformImageResizeAndPutOnCanvas(PicPath + "C" + InternalItems[i] + ".jpg", ButtonWidth, 768));
                 Button Right = new Button();
                 Right.Tag = i.ToString();
                 Right.Image = BlurImageLibrary[i];
