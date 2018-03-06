@@ -59,7 +59,7 @@
 (bean (name "Tanzania") (remark "Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma double-chocolate))
 ;Medium Acidity, Medium Bitterness
 (bean (name "Congo") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma blackforest))
-(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma nutty))
+(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smoothnutty))
 (bean (name "Guatemala") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma velvety))
 ;Low Acidity, High Bitterness
 (bean (name "Sulawesi") (remark "Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma almond))
@@ -83,7 +83,7 @@
 ;Special*
 ;High Acidity, Low Bitterness
 (bean (name "Ethiopia") (remark "Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma smoky))
-(bean (name "India") (remark "Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma brown_roast))
+(bean (name "India") (remark "Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma brown-roast))
 (bean (name "Vietnam") (remark "Medium Roasted, Very Full Body") (acidity 2) (category special) (aroma rubbery))
 ;Medium Acidity, Medium Bitterness
 (bean (name "Hawaii Kona") (remark "Medium Roasted, Very Full Body") (acidity 1) (category special) (aroma winey))
@@ -333,7 +333,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 2))
   	=>
-	(modify ?p(question "Let us get more specific aroma?")(options smoky brown_roast rubbery))
+	(modify ?p(question "Let us get more specific aroma?")(options smoky brown-roast rubbery))
 	(retract ?n)
 )
 
