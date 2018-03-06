@@ -50,7 +50,7 @@
 ;Low Acidity, High Bitterness
 (bean (name "Nicaragua") (remark "Medium High Roasted, Full Body") (acidity 0) (category fruity) (aroma tangerine))
 (bean (name "Ethiopia") (remark "Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma peach))
-(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma black_cherry))
+(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 0) (category fruity) (aroma blackcherry))
 
 ;Nutty*
 ;High Acidity, Low Bitterness
@@ -232,7 +232,7 @@
 	?p <- (nextQuestion(question "What aroma would you like?" ))
 	(profile(name user)(acidity 0))
   	=>
-	(modify ?p(question "Let us get more specific aroma?")(options tangerine peach black_cherry))
+	(modify ?p(question "Let us get more specific aroma?")(options tangerine peach blackcherry))
 	(retract ?n)
 )
 
