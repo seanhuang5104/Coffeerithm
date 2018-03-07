@@ -232,7 +232,7 @@
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 0))
         =>
-        (modify ?p(question "Let us get more specific aroma?")(options tangerine peach cherry))
+        (modify ?p(question "Let us get more specific aroma?")(options tangerine peach blackcherry))
         (retract ?n)
 )
 
@@ -250,7 +250,7 @@
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 0))
         =>
-        (modify ?p(question "Let us get more specific aroma?")(options honey caramal mapleSyrup))
+        (modify ?p(question "Let us get more specific aroma?")(options honey caramel maple-syrup))
         (retract ?n)
 )
 
@@ -269,7 +269,7 @@
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 1))
         =>
-        (modify ?p(question "Let us get more specific aroma?")(options raisin prune blackcherry))
+        (modify ?p(question "Let us get more specific aroma?")(options raisin prune cherry))
         (retract ?n)
 )
 
