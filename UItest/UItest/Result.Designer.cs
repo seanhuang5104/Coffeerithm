@@ -88,9 +88,9 @@
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(447, 522);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 30);
+            this.label2.Size = new System.Drawing.Size(183, 30);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Tips for barasta:";
+            this.label2.Text = "Tips for barista:";
             // 
             // mood_modifier
             // 

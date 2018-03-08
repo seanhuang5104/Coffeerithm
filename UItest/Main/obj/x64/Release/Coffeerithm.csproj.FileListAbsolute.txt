@@ -9,3 +9,4 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Coffeeri
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Coffeerithm.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Coffeerithm.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Coffeerithm.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Release\Coffeerithm.csproj.CopyComplete

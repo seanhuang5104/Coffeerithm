@@ -12,3 +12,4 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Debug\Coffeerith
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Debug\Coffeerithm.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Debug\Coffeerithm.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Debug\Coffeerithm.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\Main\obj\x64\Debug\Coffeerithm.csproj.CopyComplete

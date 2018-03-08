@@ -48,12 +48,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(336, 523);
+            this.button2.ForeColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(878, 621);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 63);
+            this.button2.Size = new System.Drawing.Size(66, 39);
             this.button2.TabIndex = 1;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = false;

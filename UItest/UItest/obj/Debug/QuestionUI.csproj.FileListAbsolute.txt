@@ -20,4 +20,3 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.c
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Debug\UItest.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Debug\UItest.pdb
-C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Debug\QuestionUI.csprojResolveAssemblyReference.cache

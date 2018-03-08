@@ -139,7 +139,23 @@ namespace QuestionUI
 
                 Right.FlatAppearance.MouseOverBackColor = Color.Transparent;
 
-                
+                Label optionName = new Label();
+                string strOptionName = InternalItems[Convert.ToInt16(Right.Tag)].ToUpper().Replace('-', ' ');
+                int indexOfSeperator = strOptionName.IndexOf('_');
+                if (indexOfSeperator != -1)
+                    optionName.Text = strOptionName.Substring(strOptionName.IndexOf('_') + 1, strOptionName.Length - (strOptionName.IndexOf('_') + 1));
+                else
+                    optionName.Text = strOptionName;
+                optionName.Size = new Size(Right.Width, 100);
+                optionName.Location = new Point(0, 668);
+                optionName.Parent = Right;
+                optionName.BackColor = Color.FromArgb(64, 64, 64);
+                optionName.ForeColor = Color.FromArgb(225, 226, 210);
+                optionName.Font = new Font("Comic Sans MS", 20);
+                optionName.TextAlign = ContentAlignment.MiddleCenter;
+                optionName.BringToFront();
+                optionName.Show();
+
                 this.Controls.Add(Right);
                 
                 
@@ -150,24 +166,12 @@ namespace QuestionUI
         private void button1_MouseHover(object sender, EventArgs e)
         {
             Button me = (Button)sender;
+            Label childLabel = (Label)me.GetChildAtPoint(new Point(0, 680));
+            if (childLabel != null)
+                childLabel.Font = new Font("Comic Sans MS", 25);
             me.Image = ImageLibrary[Convert.ToInt16(me.Tag)];
 
-            Label optionName = new Label();
-            string strOptionName = InternalItems[Convert.ToInt16(me.Tag)].ToUpper().Replace('-', ' ');
-            int indexOfSeperator = strOptionName.IndexOf('_');
-            if (indexOfSeperator != -1)
-                optionName.Text = strOptionName.Substring(strOptionName.IndexOf('_') + 1, strOptionName.Length - (strOptionName.IndexOf('_') + 1));
-            else
-                optionName.Text = strOptionName;
-            optionName.Size = new Size(me.Width, 100);
-            optionName.Location = new Point(0, 668);
-            optionName.Parent = me;
-            optionName.BackColor = Color.FromArgb(64, 64, 64);
-            optionName.ForeColor = Color.FromArgb(225,226,210);
-            optionName.Font = new Font("Comic Sans MS", 20);
-            optionName.TextAlign = ContentAlignment.MiddleCenter;
-            optionName.BringToFront();
-            optionName.Show();
+           
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
@@ -175,8 +179,8 @@ namespace QuestionUI
                 Button me = (Button)sender;
                 Label childLabel = (Label)me.GetChildAtPoint(new Point(0, 680));
                 if(childLabel != null)
-                    childLabel.Dispose();
-                me.Image = BlurImageLibrary[Convert.ToInt16(me.Tag)];
+                    childLabel.Font = new Font("Comic Sans MS", 20);
+            me.Image = BlurImageLibrary[Convert.ToInt16(me.Tag)];
         }
     }
 
