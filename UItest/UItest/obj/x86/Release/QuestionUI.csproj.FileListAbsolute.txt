@@ -9,3 +9,4 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\Questi
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\UItest.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\UItest.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.csprojResolveAssemblyReference.cache

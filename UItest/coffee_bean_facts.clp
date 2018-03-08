@@ -545,7 +545,7 @@
         ?p <- (nextQuestion(question "How do you feel today?"))
         ?k <- (profile(name user))
         =>
-        (modify ?k(mood_modifier "Reduce sugar level to 50%, half an expresso shot. Add cocoa powder."))
+        (modify ?k(mood_modifier "Reduce sugar level to 50%, half concentration. Add cocoa powder."))
         (modify ?p(question "finished"))
         (retract ?n)
 )
@@ -555,7 +555,7 @@
         ?p <- (nextQuestion(question "How do you feel today?"))
         ?k <- (profile(name user))
         =>
-        (modify ?k(mood_modifier "Suggest double expresso shots."))
+        (modify ?k(mood_modifier "Suggest increase concentration."))
         (modify ?p(question "finished"))
         (retract ?n)
 )
