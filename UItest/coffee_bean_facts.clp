@@ -347,7 +347,7 @@
         (profile(name user)(acidity 0)(milk 0))
         =>
     (modify ?k(brew_recommanded "Cold-Brew")(brew_remark "Coffee that's brewed with room temperature or cold water over a 12 to 24-hour brew time. Because it's made with colder water, it's generally a bit mellower and tastes more rounded out with lesser acidity"))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -365,7 +365,7 @@
         ?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
         ?k <- (profile(name user))
         =>
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
     (modify ?k(brew_recommanded "Drip Coffee")(brew_remark "Made by dripping boiling water over ground coffee, which is ground more coarsely than espresso coffee. The water filters through the coffee and falls into a pot. This process is slower than the espresso process, and hot water is in contact with the ground coffee for much longer. "))
         (retract ?n)
 )
@@ -385,7 +385,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "French Press")(brew_remark "This machine is used by placing the coffee grounds in the bottom of the container, steeping them with hot water, and then pressing down on the plunger slowly. The plunger catches the grounds of coffee so that they do not end up in the final cup. It retains more of the natural oils from the coffee grounds."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -395,7 +395,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Chemex")(brew_remark "Due to the way that the water sits in the filter together with the ground coffee beans, we get the added benefit here of immersion, where the grinds and the hot water mix together to give your coffee that smooth added flavour."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -414,7 +414,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Americano")(brew_remark "An Americano is an espresso-based drink that is popular in the United States of America. This drink consists of a single or double-shot of espresso combined with up to four or five ounces of hot water in a two-demitasse cup."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -424,7 +424,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Espresso")(brew_remark "Espresso is the name of a highly concentrated, bittersweet coffee originating in Italy in the early 20th century. A well-made espresso will generally have a heavy body, rich texture, and a bittersweet taste. Each shot should have a layer of crema on the surface, generally golden to dark tan in color."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -434,7 +434,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Ristretto")(brew_remark "Ristretto is traditionally a short shot of espresso coffee made with the normal amount of ground coffee but extracted with about half the amount of water in the same amount of time by using a finer grind. This produces a concentrated shot of coffee per volume. "))
-        (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+        (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -461,7 +461,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Flat White")(brew_remark "Flat White is a coffee beverage from Australia and New Zealand. It is prepared by pouring microfoam over a single or double shot of espresso. "))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -471,7 +471,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Macchiato")(brew_remark "Macchiato is an espresso-based coffee beverage consisting mostly of coffee with a small amount of milk. Translating from the Italian phrase meaning marked coffee, this drink is made by marking a single shot of espresso with a few drops of frothed milk and served in a demitasse."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -491,7 +491,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Espressino")(brew_remark "Espressino is an Italian coffee drink made from equal parts espresso, Nutella all over the wall of the cup, with some cocoa powder on the bottom of the cup and on top of the drink, and a part of milk as well."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -502,7 +502,7 @@
         ?k <- (profile(name user))
         =>
     (modify ?k(brew_recommanded "Mocha")(brew_remark "Mocha, is an American invention.  It is typically one third espresso and two thirds hot chocolate. Mochas can contain dark or milk chocolate."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 
@@ -512,8 +512,8 @@
         ?k <- (profile(name user))
         (profile(name user)(milk 2)(acidity 0))
         =>
-    (modify ?k(brew_recommanded "Caffee Latte")(brew_remark "Cafe latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam."))
-    (modify ?p(question "How do you feel today?")(options happy sad nervious sleepy))
+    (modify ?k(brew_recommanded "Cafe-Latte")(brew_remark "Cafe latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam."))
+    (modify ?p(question "How do you feel today?")(options happy sad nervous sleepy))
         (retract ?n)
 )
 ;;********************************************
@@ -535,13 +535,13 @@
         ?p <- (nextQuestion(question "How do you feel today?"))
         ?k <- (profile(name user))
         =>
-        (modify ?k(mood_modifier "Add somme cocoa powder to cheer them up."))
+        (modify ?k(mood_modifier "Add some cocoa powder to cheer them up."))
         (modify ?p(question "finished"))
         (retract ?n)
 )
 
-(defrule mood_nervious
-        ?n<-(answer_of "How do you feel today?" nervious)
+(defrule mood_nervous
+        ?n<-(answer_of "How do you feel today?" nervous)
         ?p <- (nextQuestion(question "How do you feel today?"))
         ?k <- (profile(name user))
         =>
