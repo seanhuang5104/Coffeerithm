@@ -375,12 +375,12 @@
         ?p <- (nextQuestion(question "Do you prefer smooth or harsh coffees?"))
         ?k <- (profile(name user))
         =>
-        (modify ?p(question "How would you like your coffee?")(options thinBody thickBody))
+        (modify ?p(question "How would you like your coffee?")(options thinBody fullBody))
         (retract ?n)
 )
 
 (defrule milk_no_acidity_med_smooth_body_full
-        ?n<-(answer_of "How would you like your coffee?" thickBody)
+        ?n<-(answer_of "How would you like your coffee?" fullBody)
         ?p <- (nextQuestion(question "How would you like your coffee?"))
         ?k <- (profile(name user))
         =>
