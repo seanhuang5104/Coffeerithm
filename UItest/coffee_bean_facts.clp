@@ -58,9 +58,9 @@
 (bean (name "Sumatra") (remark "Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma dark-chocolate))
 (bean (name "Tanzania") (remark "Medium Roasted, Very Full Body") (acidity 2) (category nutty) (aroma double-chocolate))
 ;Medium Acidity, Medium Bitterness
-(bean (name "Congo") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma blackforest))
-(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma smoothnutty))
-(bean (name "Guatemala") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma velvety))
+(bean (name "Congo") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma double-chocolate))
+(bean (name "Mexico") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma dark-chocolate))
+(bean (name "Guatemala") (remark "Medium Roasted, Very Full Body") (acidity 1) (category nutty) (aroma chocolate))
 ;Low Acidity, High Bitterness
 (bean (name "Sulawesi") (remark "Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma almond))
 (bean (name "Honduras") (remark "Medium Roasted, Very Full Body") (acidity 0) (category nutty) (aroma hazelnut))
@@ -278,7 +278,7 @@
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 1))
         =>
-        (modify ?p(question "Let us get more specific aroma?")(options blackforest smoothnutty velvety))
+        (modify ?p(question "Let us get more specific aroma?")(options chocolate dark-chocolate double-chocolate))
         (retract ?n)
 )
 
