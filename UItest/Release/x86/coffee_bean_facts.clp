@@ -212,7 +212,7 @@
 
         =>
 
-        (modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+        (modify ?p(question "What aroma would you like?")(options fruity chocolate sweetness special))
 
         (modify ?k(acidity 2))
 
@@ -311,7 +311,7 @@
 )
 
 (defrule specific_highacid_aroma_nutty
-        ?n<-(answer_of "What aroma would you like?" nutty )
+        ?n<-(answer_of "What aroma would you like?" chocolate )
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 2))
         =>
