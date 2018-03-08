@@ -5,7 +5,7 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\bin\x86\Release\UItest
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.UI.resources
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.Properties.Resources.resources
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.Result.resources
-C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.csproj.GenerateResource.Cache
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.csproj.GenerateResource.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\QuestionUI.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\UItest.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\x86\Release\UItest.pdb

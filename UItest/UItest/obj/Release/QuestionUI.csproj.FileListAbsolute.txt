@@ -21,3 +21,4 @@ C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Release\QuestionUI
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Release\QuestionUI.csproj.CoreCompileInputs.cache
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Release\UItest.exe
 C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Release\UItest.pdb
+C:\Users\sean_\Documents\GitHub\Coffeerithm\UItest\UItest\obj\Release\QuestionUI.csprojResolveAssemblyReference.cache
