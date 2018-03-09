@@ -110,7 +110,7 @@
 
         =>
 
-        (modify ?p(question "Like it acid or bitter?")(options acid balanced bitter))
+        (modify ?p(question "Like it acidic or bitter?")(options acidic balanced bitter))
 
         (modify ?k(milk 0))
 
@@ -164,9 +164,9 @@
 
 (defrule acid_low
 
-        ?n<-(answer_of "Like it acid or bitter?" bitter )
+        ?n<-(answer_of "Like it acidic or bitter?" bitter )
 
-        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acidic or bitter?" ))
 
              ?k <- (profile(name user))
 
@@ -184,9 +184,9 @@
 
 (defrule acid_mid
 
-        ?n<-(answer_of "Like it acid or bitter?" balanced )
+        ?n<-(answer_of "Like it acidic or bitter?" balanced )
 
-        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acidic or bitter?" ))
 
              ?k <- (profile(name user))
 
@@ -204,9 +204,9 @@
 
 (defrule acid_high
 
-        ?n<-(answer_of "Like it acid or bitter?" acid)
+        ?n<-(answer_of "Like it acidic or bitter?" acidic)
 
-        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acidic or bitter?" ))
 
              ?k <- (profile(name user))
 
