@@ -274,7 +274,7 @@
 )
 
 (defrule specific_medacid_aroma_nutty
-        ?n<-(answer_of "What aroma would you like?" nutty )
+        ?n<-(answer_of "What aroma would you like?" chocolate )
         ?p <- (nextQuestion(question "What aroma would you like?" ))
         (profile(name user)(acidity 1))
         =>
