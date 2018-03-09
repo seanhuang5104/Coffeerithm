@@ -192,7 +192,7 @@
 
         =>
 
-        (modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+        (modify ?p(question "What aroma would you like?")(options fruity chocolate sweetness special))
 
         (modify ?k(acidity 1))
 
