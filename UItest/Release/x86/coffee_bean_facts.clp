@@ -102,7 +102,7 @@
 
 (defrule milk_amount_non
 
-        ?n<-(answer_of "Amount of milk?" pure)
+        ?n<-(answer_of "Amount of milk?" no-milk)
 
         ?p <- (nextQuestion(question "Amount of milk?" ))
 
@@ -110,7 +110,7 @@
 
         =>
 
-        (modify ?p(question "Like it sour or bitter?")(options sour balanced bitter))
+        (modify ?p(question "Like it acid or bitter?")(options acid balanced bitter))
 
         (modify ?k(milk 0))
 
@@ -164,9 +164,9 @@
 
 (defrule acid_low
 
-        ?n<-(answer_of "Like it sour or bitter?" bitter )
+        ?n<-(answer_of "Like it acid or bitter?" bitter )
 
-        ?p <- (nextQuestion(question "Like it sour or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
 
              ?k <- (profile(name user))
 
@@ -184,15 +184,15 @@
 
 (defrule acid_mid
 
-        ?n<-(answer_of "Like it sour or bitter?" balanced )
+        ?n<-(answer_of "Like it acid or bitter?" balanced )
 
-        ?p <- (nextQuestion(question "Like it sour or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
 
              ?k <- (profile(name user))
 
         =>
 
-        (modify ?p(question "What aroma would you like?")(options fruity nutty sweetness special))
+        (modify ?p(question "What aroma would you like?")(options fruity chocolate sweetness special))
 
         (modify ?k(acidity 1))
 
@@ -204,9 +204,9 @@
 
 (defrule acid_high
 
-        ?n<-(answer_of "Like it sour or bitter?" sour)
+        ?n<-(answer_of "Like it acid or bitter?" acid)
 
-        ?p <- (nextQuestion(question "Like it sour or bitter?" ))
+        ?p <- (nextQuestion(question "Like it acid or bitter?" ))
 
              ?k <- (profile(name user))
 

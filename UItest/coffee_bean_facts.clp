@@ -102,7 +102,7 @@
 
 (defrule milk_amount_non
 
-        ?n<-(answer_of "Amount of milk?" pure)
+        ?n<-(answer_of "Amount of milk?" no-milk)
 
         ?p <- (nextQuestion(question "Amount of milk?" ))
 
