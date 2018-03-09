@@ -58,7 +58,7 @@ namespace Main
             button2.Visible = false;
             question = "Amount of milk?";
             factsAssert.Clear();
-            options = new List<string>() { "pure", "little", "milky" };
+            options = new List<string>() { "no-milk", "little", "milky" };
 
             while (!questionCompleted)
             {
